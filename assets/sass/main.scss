@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+
+$family-sans-serif: Bahnschrift, 'Trebuchet MS', sans-serif;
+
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+@import "../../node_modules/bulma/bulma.sass";

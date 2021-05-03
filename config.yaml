@@ -1,0 +1,9 @@
+baseURL: "http://sprkweb.github.io/"
+defaultContentLanguage: en
+languages:
+  ru:
+    title: Вадим Сапрыкин
+    weight: 2
+  en:
+    title: Vadim Saprykin
+    weight: 1
