@@ -32,3 +32,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+      
+      - name: Check with Lighthouse 
+        uses: treosh/lighthouse-ci-action@v7
+        with:
+          configPath: '.github/lighthouse/lighthouserc.yml'
