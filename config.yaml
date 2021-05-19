@@ -3,8 +3,10 @@ defaultContentLanguage: en
 languages:
   ru:
     title: Вадим Сапрыкин
+    description: "Сайт веб-разработчика Вадима Сапрыкина"
   en:
     title: Vadim Saprykin
+    description: "Site of a web developer Vadim Saprykin"
 staticDir:
   - static
   - node_modules/@fortawesome/fontawesome-free
