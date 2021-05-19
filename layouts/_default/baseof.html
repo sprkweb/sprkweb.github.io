@@ -6,15 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    
+    <link rel="stylesheet" href="/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/css/brands.min.css">
+    <link rel="stylesheet" href="/css/solid.min.css">
 
     {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
 </head>
 
 <body>
-    <div class="container">
-        {{ block "main" . }}
-        {{ end }}
+    <div class="wrapper">
+        <div class="main">
+            {{ partialCached "i18n.html" . }}
+            <div class="container">
+                {{ block "main" . }}
+                {{ end }}
+            </div>
+        </div>
+        
+        <footer class="footer">
+            {{ partialCached "footer.html" . }}
+        </footer>
     </div>
 </body>
 

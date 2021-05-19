@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: '15.x'
 
-      - run: npm install --production=false
+      - run: npm install --prefix assets --production=false
 
       - name: Build
         run: hugo --minify

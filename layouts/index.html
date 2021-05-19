@@ -1,5 +1,17 @@
 {{ define "main" }}
-    <div class="content">
-        {{.Content}}
-    </div>
+    <section class="section">
+        <div class="hero">
+            <div class="hero-body">
+                <h1 class="title">{{.Title}}</h1>
+        
+                {{ with .Params.subtitle }}
+                <h2 class="subtitle">{{.}}</h2>
+                {{ end }}
+            </div>
+        </div>
+
+        <div class="content">
+            {{.Content}}
+        </div>
+    </section>
 {{ end }}

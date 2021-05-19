@@ -3,7 +3,12 @@ defaultContentLanguage: en
 languages:
   ru:
     title: Вадим Сапрыкин
-    weight: 2
   en:
     title: Vadim Saprykin
-    weight: 1
+staticDir:
+  - static
+  - node_modules/@fortawesome/fontawesome-free
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
