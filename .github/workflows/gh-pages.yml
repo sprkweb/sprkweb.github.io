@@ -37,3 +37,5 @@ jobs:
         uses: treosh/lighthouse-ci-action@v7
         with:
           configPath: '.github/lighthouse/lighthouserc.yml'
+          temporaryPublicStorage: true
+          uploadArtifacts: true
