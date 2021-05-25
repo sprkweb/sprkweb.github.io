@@ -3,7 +3,7 @@
 
 $brand-color: #ff0000;
 
-$family-sans-serif: 'Bahnschrift SemiCondensed', 'Trebuchet MS', sans-serif;
+$family-sans-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 $body-weight: 300;
 $body-size: 18px;
 
@@ -24,14 +24,20 @@ $fullhd-enabled: false;
 @import "../../node_modules/bulma/sass/elements/content.sass";
 @import "../../node_modules/bulma/sass/elements/title.sass";
 @import "../../node_modules/bulma/sass/elements/icon.sass";
+@import "../../node_modules/bulma/sass/elements/tag.sass";
+@import "../../node_modules/bulma/sass/form/shared.sass";
+@import "../../node_modules/bulma/sass/form/tools.sass";
+@import "../../node_modules/bulma/sass/components/breadcrumb.sass";
+@import "../../node_modules/bulma/sass/components/level.sass";
 
+$desktop-real: $desktop - (2 * $gap);
 
-@mixin family-light {
-    font-family: $family-sans-serif;
+@mixin sans-light {
+    font-family: 'Bahnschrift SemiCondensed', 'Trebuchet MS', sans-serif;
     font-weight: 300;
 }
 
-@mixin family-normal {
+@mixin sans-normal {
     font-family: 'Bahnschrift', 'Trebuchet MS', sans-serif;
     font-weight: 400;
 }
@@ -40,14 +46,19 @@ $fullhd-enabled: false;
     vertical-align: text-bottom;
 }
 
+a .icon i:before {
+    display: inline-block;
+}
+
+
 .content {
     h1, h2, h3, h4, h5, h6 {
-        @include family-normal;
+        @include sans-normal;
     }
 }
 
 h1, h2, h3, h4, h5, h6 {
-    @include family-normal;
+    @include sans-normal;
 }
 
 .hero {
@@ -56,12 +67,29 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.section > .hero .hero-body {
-    padding-top: 0;
-    padding-left: 0;
-    padding-right: 0;
+.section .hero .hero-body {
+    padding: 0 0 3rem 0;
 }
 
+.hero .hero-body {
+    .title-inline {
+        display: inline-block;
+    }
+    
+    .subtitle-inline {
+        &:before {
+            content: '–';
+            margin: 0 0.5em;
+        }
+
+        &, &:before {
+            font-size: $title-size;
+            color: rgb(150, 150, 150);
+        }
+
+        display: inline-block;
+    }
+}
 
 .content ul {
     list-style: none;
@@ -71,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
         &:before {
             content: '–';
             margin-right: 0.5em;
-            @include family-normal;
+            @include sans-normal;
         }
 
         text-indent: 0.5em;
@@ -88,6 +116,8 @@ a {
 }
 
 footer {
+    font-family: 'Bahnschrift SemiCondensed', 'Trebuchet MS', sans-serif;
+
     a {
         text-decoration: none;
         color: inherit;
@@ -144,8 +174,8 @@ html, body {
 }
 
 .lang-list {
+    @include sans-light;
     text-align: right;
-    margin: 1em;
 
     li {
         display: inline;
@@ -154,5 +184,43 @@ html, body {
         &:not(:first-child):before {
             content: " | "
         }
+    }
+}
+
+.homepage {
+    .hero-body {
+        margin-bottom: 1rem;
+        border-bottom: 2px dashed black;
+        text-align: center;
+    }
+
+    .content {
+        @include sans-normal;
+    }
+}
+
+// .tag-list {
+//     margin: 0.5em 0;
+//     li {
+//         display: inline;
+//     }
+// }
+
+a.tag {
+    &:link, &:active, &:hover, &:focus, &:visited {
+        @include sans-normal;
+        text-decoration: none;
+    }
+}
+
+.breadcrumb li.is-active a {
+    text-decoration: none;
+}
+
+.header-navigation {
+    margin: 1em;
+
+    > :first-child {
+        padding-left: calc((100% - #{$desktop-real}) / 2);
     }
 }

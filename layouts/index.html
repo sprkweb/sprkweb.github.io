@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <main class="section">
+    <main class="section homepage">
         <div class="hero">
             <div class="hero-body">
                 <h1 class="title">{{.Title}}</h1>
@@ -10,8 +10,10 @@
             </div>
         </div>
 
-        <div class="content">
-            {{.Content}}
+        <div class="container">
+            <div class="content">
+                {{.Content}}
+            </div>
         </div>
     </main>
 {{ end }}

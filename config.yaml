@@ -1,5 +1,14 @@
 baseURL: "https://sprkweb.github.io/"
 defaultContentLanguage: en
+staticDir:
+  - static
+  - node_modules/@fortawesome/fontawesome-free
+taxonomies:
+  tag: tags
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 languages:
   ru:
     title: Вадим Сапрыкин
@@ -7,10 +16,3 @@ languages:
   en:
     title: Vadim Saprykin
     description: "Site of a web developer Vadim Saprykin"
-staticDir:
-  - static
-  - node_modules/@fortawesome/fontawesome-free
-markup:
-  goldmark:
-    renderer:
-      unsafe: true

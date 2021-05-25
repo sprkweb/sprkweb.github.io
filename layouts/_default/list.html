@@ -1,0 +1,19 @@
+{{ define "main" }}
+    <main class="section">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-body">
+                    <h1 class="title">{{.Title}}</h1>
+                </div>
+            </div>
+
+            {{ range .Pages }}
+                <h2 class="title is-4"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+
+                <div class="content">
+                    {{ .Summary }}
+                </div>
+            {{ end }}
+        </div>
+    </main>
+{{ end }}

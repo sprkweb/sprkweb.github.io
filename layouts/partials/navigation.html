@@ -1,0 +1,10 @@
+<nav class="header-navigation level">
+    <div class="level-left">
+        {{ if not .IsHome }}
+        {{ partial "breadcrumbs.html" . }}
+        {{ end }}
+    </div>
+    <div class="level-right">
+        {{ partial "i18n.html" . }}
+    </div>
+</nav>

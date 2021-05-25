@@ -1,0 +1,18 @@
+<!-- Code from here https://gohugo.io/content-management/sections/ -->
+
+<div class="breadcrumb has-arrow-separator" aria-label="breadcrumbs">
+    <ul>
+        {{ template "breadcrumbs-list" (dict "p1" . "p2" .) }}
+    </ul>
+</div>
+
+{{ define "breadcrumbs-list" }}
+{{ if .p1.Parent }}
+{{ template "breadcrumbs-list" (dict "p1" .p1.Parent "p2" .p2 )  }}
+{{ else if not .p1.IsHome }}
+{{ template "breadcrumbs-list" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+{{ end }}
+<li{{ if eq .p1 .p2 }} class="is-active"{{ end }}>
+    <a href="{{ .p1.Permalink }}"{{ if eq .p1 .p2 }} aria-current="page"{{ end }}>{{ .p1.Title }}</a>
+</li>
+{{ end }}
