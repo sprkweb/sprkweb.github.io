@@ -1,6 +1,6 @@
 ---
 title: "Тарона"
-years: "2016-2018"
+years: "2015-2017"
 gh_repo: "https://github.com/sprkweb/tarona/tree/main/tarona"
 tags: [Ruby, JavaScript, SASS, WebSockets, SVG, BDD]
 ---
