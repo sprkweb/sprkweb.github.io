@@ -1,7 +1,7 @@
 ---
 title: "Тарона"
 years: "2015-2017"
-gh_repo: "https://github.com/sprkweb/tarona/tree/main/tarona"
+gh_repo: "https://github.com/sprkweb/tarona/"
 tags: [Ruby, JavaScript, SASS, WebSockets, SVG, BDD]
 ---
 
@@ -28,7 +28,7 @@ tags: [Ruby, JavaScript, SASS, WebSockets, SVG, BDD]
 - Полное покрытие генерируемой документацией и тестами (BDD), для бэк-энда (RSpec, Yard) и для фронт-энда (Jasmine, JSDoc, с использованием headless браузера PhantomJS)
 - Кроссплатформенность, возможность портабельности через JRuby + Bundler
 
-[Подробнее про архитектуру](https://github.com/sprkweb/tarona/blob/main/tarona/CONTRIBUTING.md#code-guide)
+[Подробнее про архитектуру](https://github.com/sprkweb/tarona/blob/master/CONTRIBUTING.md#code-guide)
 
 ## Сюжет
 
@@ -43,7 +43,7 @@ tags: [Ruby, JavaScript, SASS, WebSockets, SVG, BDD]
 интерактивная книга) до закрытия проекта было рассмотрено много разных
 вариантов сюжета и мира, но некоторые черты сохранялись от начала до конца:
 в самой основе всегда лежала идея о четырёх параллельно существующих планетах,
-каждая из которых соответствует одной из четырёх стихий, 
+каждая из которых соответствует одной из четырёх стихий,
 имеет соответствующие этой стихии особенности и собственные расы существ.
 
 Например, планета Земли - аналогична нашей Земле, планета Огня в
