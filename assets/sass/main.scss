@@ -3,9 +3,26 @@
 
 $brand-color: #ff0000;
 
-$family-sans-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=cyrillic');
+
+$family-headline: 'Trebuchet MS', 'Open Sans', sans-serif;
+$family-text: 'Open Sans', Georgia, Cambria, "Times New Roman", Times, serif;
+$family-details: 'Open Sans', 'Trebuchet MS', sans-serif;
+
+@mixin font-headline {
+    font-family: $family-headline;
+}
+@mixin font-text {
+    font-family: $family-text;
+}
+@mixin font-details {
+    font-family: $family-details;
+}
+
+$body-family: $family-text;
 $body-weight: 300;
-$body-size: 18px;
+$body-size: 16px;
 
 $link: $brand-color;
 
@@ -52,13 +69,15 @@ a .icon i:before {
 
 
 .content {
-    h1, h2, h3, h4, h5, h6 {
-        @include sans-normal;
+    p {
+        text-align: justify;
     }
 }
 
 h1, h2, h3, h4, h5, h6 {
-    @include sans-normal;
+    &, .content & {
+        @include font-headline;
+    }
 }
 
 .subtitle {
@@ -97,7 +116,6 @@ h1, h2, h3, h4, h5, h6 {
         &:before {
             content: '–';
             margin-right: 0.5em;
-            @include sans-normal;
         }
 
         text-indent: 0.5em;
@@ -114,7 +132,7 @@ a {
 }
 
 footer {
-    font-family: 'Bahnschrift SemiCondensed', 'Trebuchet MS', sans-serif;
+    @include font-details;
 
     a {
         text-decoration: none;
@@ -172,7 +190,7 @@ html, body {
 }
 
 .lang-list {
-    @include sans-normal;
+    @include font-details;
     text-align: right;
 
     li {
@@ -243,20 +261,13 @@ html, body {
     }
 
     .content {
-        @include sans-normal;
+        font-size: 1.125rem;
     }
 }
 
-// .tag-list {
-//     margin: 0.5em 0;
-//     li {
-//         display: inline;
-//     }
-// }
-
 a.tag {
     &:link, &:active, &:hover, &:focus, &:visited {
-        @include sans-normal;
+        font-size: 1rem;
         text-decoration: none;
     }
 }
