@@ -170,8 +170,22 @@ footer {
     }
 }
 
+@keyframes highlight {
+    from, to {
+        outline: 5px solid rgba(255, 255, 255, 0);
+    }
+    50% {
+        outline: 5px solid $brand-color;
+    }
+}
+
+#contacts:target {
+    animation: highlight 1s 2 linear;
+}
+
 
 html, body {
+    scroll-behavior: smooth;
     height: 100%;
 }
 
