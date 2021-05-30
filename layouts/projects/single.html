@@ -1,47 +1,43 @@
-{{ define "main" }}
-    <main class="section">
-        <div class="container">
-            <div class="hero">
-                <div class="hero-body">
-                    <h1 class="title title-inline">{{.Title}}</h1>
-            
-                    {{ with .Params.years }}
-                    <h2 class="subtitle-inline">{{.}}</h2>
-                    {{ end }}
+{{ define "content" }}
+<div class="hero">
+    <div class="hero-body">
+        <h1 class="title title-inline">{{.Title}}</h1>
 
-                    {{ with .Params.tags }}
-                    <ul class="field is-grouped is-grouped-multiline">
-                        {{ range . }}
-                        <li class="control">
-                            <a class="tag" href='{{ "/tags/" | relLangURL }}{{ . | urlize }}'>
-                                {{ . }}
-                            </a>
-                        </li>
-                        {{ end }}
-                    </ul>
-                    {{ end }}
+        {{ with .Params.years }}
+        <h2 class="subtitle-inline">{{.}}</h2>
+        {{ end }}
 
-                    {{ with .Params.gh_repo }}
-                    <p>
-                        <a href="{{ . }}"
-                            target="_blank" rel="noreferrer">
-                            <span class="icon-text">
-                                <span>
-                                    {{ i18n "view-on-github" }}
-                                </span>
-                                <span class="icon">
-                                    <i class="inline-icon fab fa-github-alt"></i>
-                                </span>
-                            </span>
-                        </a>
-                    </p>
-                    {{ end }}
-                </div>
-            </div>
+        {{ with .Params.tags }}
+        <ul class="field is-grouped is-grouped-multiline">
+            {{ range . }}
+            <li class="control">
+                <a class="tag" href='{{ "/tags/" | relLangURL }}{{ . | urlize }}'>
+                    {{ . }}
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
 
-            <div class="content">
-                {{.Content}}
-            </div>
-        </div>
-    </main>
+        {{ with .Params.gh_repo }}
+        <p>
+            <a href="{{ . }}"
+                target="_blank" rel="noreferrer">
+                <span class="icon-text">
+                    <span>
+                        {{ i18n "view-on-github" }}
+                    </span>
+                    <span class="icon">
+                        <i class="inline-icon fab fa-github-alt"></i>
+                    </span>
+                </span>
+            </a>
+        </p>
+        {{ end }}
+    </div>
+</div>
+
+<div class="content">
+    {{.Content}}
+</div>
 {{ end }}

@@ -1,19 +1,21 @@
 {{ define "main" }}
-    <main class="section homepage">
-        <div class="name-banner">
-            <div class="name">
-                <h1 class="title">{{.Title}}</h1>
-        
-                {{ with .Params.subtitle }}
-                <h2 class="subtitle">{{.}}</h2>
-                {{ end }}
-            </div>
+<main class="homepage">
+    {{ partial "navigation.html" . }}
+    
+    <div class="name-banner">
+        <div class="name">
+            <h1 class="title">{{.Title}}</h1>
+    
+            {{ with .Params.subtitle }}
+            <h2 class="subtitle">{{.}}</h2>
+            {{ end }}
+        </div>
 
-            <div class="name-intro">
-                <div class="content">
-                    {{.Content}}
-                </div>
+        <div class="name-intro">
+            <div class="content">
+                {{.Content}}
             </div>
         </div>
-    </main>
+    </div>
+</main>
 {{ end }}

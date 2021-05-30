@@ -1,9 +1,22 @@
-<nav class="header-navigation level">
+<nav class="level is-mobile nav" 
+    role="navigation" aria-label="main navigation">
+
     <div class="level-left">
-        {{ if not .IsHome }}
-        {{ partial "breadcrumbs.html" . }}
-        {{ end }}
+        <ul class="menu">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+                <li>
+                    {{ $is_active := not ($currentPage.IsMenuCurrent "main" .) }}
+                    {{- if $is_active -}}
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    {{- else -}}
+                        {{- .Name -}}
+                    {{- end -}}
+                </li>
+            {{ end }}
+        </ul>
     </div>
+
     <div class="level-right">
         {{ partial "i18n.html" . }}
     </div>

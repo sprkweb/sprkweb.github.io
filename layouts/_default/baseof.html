@@ -18,13 +18,23 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="main">
-            {{ partial "navigation.html" . }}
-
-            {{ block "main" . }}
-            {{ end }}
+    <div class="page">
+        {{ block "main" . }}
+        <div>
+            <div class="container">
+                {{ partial "navigation.html" . }}
+            </div>
         </div>
+        
+        <main class="main">
+            <div class="container">
+                {{ partial "breadcrumbs.html" . }}
+
+                {{ block "content" . }}
+                {{ end }}
+            </div>
+        </main>
+        {{ end }}
         
         <footer class="footer">
             {{ partialCached "footer.html" . }}

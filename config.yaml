@@ -3,6 +3,7 @@ defaultContentLanguage: en
 staticDir:
   - static
   - node_modules/@fortawesome/fontawesome-free
+sectionPagesMenu: main
 taxonomies:
   tag: tags
 markup:

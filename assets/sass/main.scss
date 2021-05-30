@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
     color: $brand-color;
 }
 
-.section .hero .hero-body {
+main .hero .hero-body {
     padding: 0 0 3rem 0;
 }
 
@@ -175,19 +175,46 @@ html, body {
     height: 100%;
 }
 
-.wrapper {
+.page {
     display: flex;
     flex-direction: column;
     min-height: 100%;
 
-    .main {
+    > .main {
         flex: 1 0 auto;
+        padding: 0 1.5rem;
     }
 
-    .footer {
+    > .footer {
+        margin-top: 2rem;
         flex: 0 0 auto;
     }
 }
+
+.nav {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(192, 192, 192);
+
+    .homepage & {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        padding-bottom: 0;
+        border-bottom: 0 none;
+    }
+
+    ul.menu {
+        list-style-type: none;
+        padding: 0;
+        
+        li {
+            display: inline;
+            margin-right: 1.5em;
+        }
+    }
+}
+
 
 .lang-list {
     @include font-details;
@@ -204,11 +231,18 @@ html, body {
 }
 
 .homepage {
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 
     .name-banner {
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-evenly;
+
         .name {
             text-align: center;
 
@@ -250,18 +284,11 @@ html, body {
         .name-intro {
             align-self: center;
         }
-
-        margin-bottom: 1rem;
-
-        min-height: calc(100vh - 4rem);
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: space-evenly;
     }
 
     .content {
         font-size: 1.125rem;
+        padding: 0 1.5rem;
     }
 }
 
@@ -272,14 +299,10 @@ a.tag {
     }
 }
 
-.breadcrumb li.is-active a {
-    text-decoration: none;
-}
+.breadcrumb {
+    margin-bottom: 3rem;
 
-.header-navigation {
-    margin: 1em;
-
-    > :first-child {
-        padding-left: calc((100% - #{$desktop-real}) / 2);
+    li.is-active a {
+        text-decoration: none;
     }
 }
