@@ -1,0 +1,6 @@
+<!-- Thanks to https://regisphilibert.com/blog/2018/01/hugo-page-resources-and-how-to-use-them/ -->
+{{ $img := $.Page.Resources.GetMatch (.Get 0)}}
+<figure>
+	<img src="{{ $img.RelPermalink }}" alt="{{ .Get 1 }}" />
+	<figcaption>{{ .Get 1 }}</figcaption>
+</figure>
