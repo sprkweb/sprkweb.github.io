@@ -1,5 +1,5 @@
 baseURL: "https://sprkweb.github.io/"
-defaultContentLanguage: en
+defaultContentLanguage: ru
 staticDir:
   - static
   - node_modules/@fortawesome/fontawesome-free
