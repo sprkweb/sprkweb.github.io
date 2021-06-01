@@ -1,0 +1,35 @@
+<!doctype html><html lang=ru><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Octava Page (намеренно неправильное написание) - веб-приложение
+для новичков-музыкантов, помогающее ориентироваться в нотах."><title>Octava Page</title><link rel=stylesheet href=/sass/main.min.bb0c37ce224b92a8f4062fb434a874fb7cdb3e61bfd2a08977b5c6598af536c7.css><link rel=stylesheet href=/css/fontawesome.min.css><link rel=stylesheet href=/css/brands.min.css><link rel=stylesheet href=/css/solid.min.css></head><body><div class=page><div><div class=container><nav class="level is-mobile nav" role=navigation aria-label="main navigation"><div class=level-left><ul class=menu><li><a href=/projects/>Проекты</a></li><li><a href=#contacts>Контакты</a></li></ul></div><div class=level-right></div></nav></div></div><main class=main><div class=container><div class="breadcrumb has-arrow-separator" aria-label=breadcrumbs><ul><li><a href=https://sprkweb.github.io/>Вадим Сапрыкин</a></li><li><a href=https://sprkweb.github.io/projects/>Проекты</a></li><li class=is-active><a href=https://sprkweb.github.io/projects/octava-page/ aria-current=page>Octava Page</a></li></ul></div><div class=hero><div class=hero-body><h1 class="title title-inline">Octava Page</h1><h2 class=subtitle-inline>2019-...</h2><ul class="field is-grouped is-grouped-multiline"><li class=control><a class=tag href=/tags/react>React</a></li><li class=control><a class=tag href=/tags/javascript>JavaScript</a></li><li class=control><a class=tag href=/tags/sass>SASS</a></li><li class=control><a class=tag href=/tags/bootstrap>Bootstrap</a></li><li class=control><a class=tag href=/tags/snowpack>Snowpack</a></li></ul><p><a href=https://sprkweb.github.io/octava-page/ target=_blank rel=noreferrer><span class=icon-text><span class=icon><i class="inline-icon fas fa-external-link-alt"></i></span>
+<span>Посмотреть</span></span></a></p><p><a href=https://github.com/sprkweb/octava-page target=_blank rel=noreferrer><span class=icon-text><span class=icon><i class="inline-icon fab fa-github-alt"></i></span>
+<span>Посмотреть на GitHub</span></span></a></p></div></div><div class=content><p>Octava Page (намеренно неправильное написание) - веб-приложение
+для новичков-музыкантов, помогающее ориентироваться в нотах.</p><p>Использует английскую нотацию (в российских музыкальных образовательных
+учреждениях распространена <a href=https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BA%D0%B2%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BD%D0%BE%D1%82%D0%B0%D1%86%D0%B8%D1%8F target=_blank rel=noreferrer>немецкая система</a>,
+в которой, например, нота си - H, в противоположность B в английской)
+и, соответственно, англоязычные термины.</p><p>У меня нет полноценного музыкального образования, так что любые предложения или
+исправления приветствуются.</p><h2 id=описание>Описание</h2><figure><img src=/projects/octava-page/screenshot.png alt=Скриншот><figcaption>Скриншот</figcaption></figure><p>Интерфейс представляет собой схематический гриф гитары с обозначенными на нём
+нотами на каждом ладу.</p><p>Количество струн можно изменять кнопками &ldquo;+&rdquo; и &ldquo;-&rdquo; внизу, строй гитары -
+настраивать путём ввода нот на открытых струнах (по умолчанию - стандартный
+строй с 6 струнами EBGDAE).</p><p>Также с помощью интерфейса сверху можно выбрать аккорд или гамму и ввести
+тонику, в результате на &ldquo;грифе&rdquo; будут выделены ноты этого аккорда или гаммы.</p><h2 id=рассуждения-и-немного-истории>Рассуждения и немного истории</h2><figure><img src=/projects/octava-page/first-version.jpg alt="Скриншот первой версии"><figcaption>Скриншот первой версии</figcaption></figure><p>Изначально приложение было задумано не конкретно для гитаристов, а для любых
+музыкантов (в первую очередь меня и моих друзей; я, например, на гитаре не
+играл), несмотря на интерфейс (и до сих пор может использоваться не только
+ими): идея первого варианта была
+основана на выводе октавы нот от определённой тоники (как на скриншоте - тоника
+всегда под номером 0, далее ноты по полутонам).</p><p>Предполагаемый способ использования был такой:</p><ol><li>Пользователь знает &ldquo;устройство&rdquo; некоторого типа аккордов, например, мажорных,
+но пока затрудняется &ldquo;вычислять&rdquo; их составные ноты в уме</li><li>Вводится тоника</li><li>Приложение строит октаву от неё</li><li>Пользователь, зная, что ноты мажорного аккорда отстоят друг от друга на
+4 и 3 полутона соотвественно, смотрит ноты с номерами 0-4-7 - это и будут
+ноты, составляющие аккорд.</li><li>Далее он самостоятельно находит соответствующие ноты у себя на инструменте - не обязательно гитаре.</li></ol><p>Другими словами, предполагалось <em>абстрагирование от конретного расположения
+пальцев на грифе</em> и взгляд на интерфейс с точки зрения чистой музыкальной теории.</p><p>Аналогично приложение можно было использовать для многих других целей, в том
+числе &ldquo;рассчёту&rdquo; составных нот гамм (тон-тон-полутон- и т.д.), интервалов,
+а также нахождения нот на грифе. Так получается, несмотря на простоту,
+гибкость и многофункциональность приложения в зависимости от
+того, под каким углом на его функцию взглянуть.</p><p>Опыт использования друзьями показал, что это была не самая удачная и понятная
+интуитивно идея. Поэтому я добавил возможность подсветки аккордов / гамм и
+возможность использования множества &ldquo;струн&rdquo;.</p><p>С одной стороны, приложение стало более функциональным и удобным (всё, что
+можно было сделать с его помощью раньше, можно и сейчас точно тем же способом),
+но, с другой стороны, с точки зрения пользователя оно стало гораздо более
+узкоспециализированным, превратившись в интерактивную аппликатуру для гитары.</p></div></div></main><footer class=footer><div class=container><div class=columns><div class="column contacts-list" id=contacts><h3>Контакты</h3><p><a href=https://t.me/saqew target=_blank rel=noreferrer><span class=icon-text><span class=icon><i title=Telegram class="fab fa-telegram"></i></span>
+<span>@saqew</span></span></a></p><p><a href=mailto:sprkweb@ya.ru target=_blank><span class=icon-text><span class=icon><i title=Email class="fas fa-envelope"></i></span>
+<span>sprkweb@ya.ru</span></span></a></p><p><a href=https://github.com/sprkweb target=_blank rel=noreferrer><span class=icon-text><span class=icon><i title="GitHub Page" class="fab fa-github" title=Email></i></span>
+<span>sprkweb</span></span></a></p></div><div class=column><p class=block><a href=https://github.com/sprkweb/sprkweb.github.io target=_blank rel=noreferrer><span class=icon-text><span>Этот сайт на GitHub</span>
+<span class=icon><i class="inline-icon fab fa-github-alt"></i></span></span></a></p><p class=block><a href=https://creativecommons.org/licenses/by/4.0/ target=_blank rel=noreferrer title="Creative Commons Attribution 4.0 International" class=cc-by><span class="icon is-small"><i class="fab fa-creative-commons"></i></span><span class="icon is-small"><i class="fab fa-creative-commons-by"></i></span></a></p></div></div></div></footer></div></body></html>
