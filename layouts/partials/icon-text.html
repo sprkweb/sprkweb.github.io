@@ -1,0 +1,11 @@
+<span class="icon-text">
+    {{ if not .reverse }}{{ partial "icon" . }}{{ end }}
+    <span>{{ .text }}</span>
+    {{ if .reverse }}{{ partial "icon" . }}{{ end }}
+</span>
+
+{{ define "partials/icon" }}
+<span class="icon">
+    <i {{ with .title }}title="{{ . }}" {{ end }}class="{{ .class }}"></i>
+</span>
+{{ end }}

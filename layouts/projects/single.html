@@ -11,33 +11,21 @@
 
         {{ with .Params.link }}
         <p>
-            <a href="{{ . }}"
-                target="_blank" rel="noreferrer">
-                <span class="icon-text">
-                    <span class="icon">
-                        <i class="inline-icon fas fa-external-link-alt"></i>
-                    </span>
-                    <span>
-                        {{ i18n "view-project-link" }}
-                    </span>
-                </span>
-            </a>
+            {{ partial "icon-text-link.html" (dict
+                "text" (i18n "view-project-link")
+                "link" .
+                "class" "fas fa-external-link-alt"
+            ) }}
         </p>
         {{ end }}
 
         {{ with .Params.gh_repo }}
         <p>
-            <a href="{{ . }}"
-                target="_blank" rel="noreferrer">
-                <span class="icon-text">
-                    <span class="icon">
-                        <i class="inline-icon fab fa-github-alt"></i>
-                    </span>
-                    <span>
-                        {{ i18n "view-on-github" }}
-                    </span>
-                </span>
-            </a>
+            {{ partial "icon-text-link.html" (dict
+                "text" (i18n "view-on-github")
+                "link" .
+                "class" "fab fa-github-alt"
+            ) }}
         </p>
         {{ end }}
     </div>

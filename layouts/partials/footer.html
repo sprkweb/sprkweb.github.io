@@ -3,59 +3,19 @@
 
             <div class="column contacts-list" id="contacts">
                 <h3>{{ i18n "contacts" }}</h3>
-                <p>
-                    <a href="https://t.me/saqew" 
-                        target="_blank" rel="noreferrer">
-                        <span class="icon-text">
-                            <span class="icon">
-                                <i title="Telegram" class="fab fa-telegram"></i>
-                            </span>
-                            <span>
-                                @saqew
-                            </span>
-                        </span>
-                    </a>
-                </p>
-                <p>
-                    <a href="mailto:sprkweb@ya.ru" target="_blank">
-                        <span class="icon-text">
-                            <span class="icon">
-                                <i title="Email" class="fas fa-envelope"></i>
-                            </span>
-                            <span>
-                                sprkweb@ya.ru
-                            </span>
-                        </span>
-                    </a>
-                </p>
-                <p>
-                    <a href="https://github.com/sprkweb"
-                        target="_blank" rel="noreferrer">
-                        <span class="icon-text">
-                            <span class="icon">
-                                <i title="GitHub Page" class="fab fa-github" title="Email"></i>
-                            </span>
-                            <span>
-                                sprkweb
-                            </span>
-                        </span>
-                    </a>
-                </p>
+                {{ range .Site.Params.contacts }}
+                    <p>{{ partial "icon-text-link.html" . }}</p>
+                {{ end }}
             </div>
 
             <div class="column">
                 <p class="block">
-                    <a href="https://github.com/sprkweb/sprkweb.github.io" 
-                        target="_blank" rel="noreferrer">
-                        <span class="icon-text">
-                            <span>
-                                {{ i18n "this-site-on-github" }}
-                            </span>
-                            <span class="icon">
-                                <i class="inline-icon fab fa-github-alt"></i>
-                            </span>
-                        </span>
-                    </a>
+                    {{ partial "icon-text-link.html" (dict
+                        "text" (i18n "this-site-on-github")
+                        "link" .Site.Params.githubLink
+                        "class" "fab fa-github-alt"
+                        "reverse" true
+                    ) }}
                 </p>
 
                 <p class="block">

@@ -59,10 +59,6 @@ $desktop-real: $desktop - (2 * $gap);
     font-weight: 400;
 }
 
-.inline-icon {
-    vertical-align: text-bottom;
-}
-
 a .icon i:before {
     display: inline-block;
 }
