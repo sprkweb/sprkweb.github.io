@@ -8,13 +8,9 @@
     {{ partial "meta-description.html" . }}
 
     <title>{{ block "title" . }}{{ .Title }}{{ end }}</title>
-
-    {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
     
-    <link rel="stylesheet" href="/css/fontawesome.min.css">
-    <link rel="stylesheet" href="/css/brands.min.css">
-    <link rel="stylesheet" href="/css/solid.min.css">
+    {{ partial "style-headers.html" . }}
+
 </head>
 
 <body>

@@ -1,6 +1,13 @@
-<!-- Thanks to https://regisphilibert.com/blog/2018/01/hugo-page-resources-and-how-to-use-them/ -->
-{{ $img := $.Page.Resources.GetMatch (.Get 0)}}
+{{ $original := $.Page.Resources.GetMatch (.Get 0) }}
+{{ $optimized := $original.Fit "896x3072 webp" }}
+
 <figure>
-	<img src="{{ $img.RelPermalink }}" alt="{{ .Get 1 }}" />
+	<a href="{{ $original.RelPermalink }}" target="_blank">
+		<picture>
+			<source type="image/webp" srcset="{{ $optimized.RelPermalink }}">
+			<img src="{{ $original.RelPermalink }}" alt="{{ .Get 1 }}"
+				 width="{{ $optimized.Width }}" height="{{ $optimized.Height }}" />
+		</picture>
+	</a>
 	<figcaption>{{ .Get 1 }}</figcaption>
 </figure>

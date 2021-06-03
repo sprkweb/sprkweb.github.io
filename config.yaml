@@ -34,3 +34,5 @@ params:
       text: "sprkweb"
       link: "https://github.com/sprkweb"
       class: "fab fa-github"
+imaging:
+  quality: 85
