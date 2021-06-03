@@ -320,3 +320,15 @@ a.tag {
         text-decoration: none;
     }
 }
+
+.list-project-summary {
+    .title {
+        text-decoration: none;
+    }
+    
+    h2, .content {
+        margin-bottom: 1rem;
+    }
+
+    margin-bottom: 3rem;
+}

@@ -7,17 +7,7 @@
         <h2 class="subtitle-inline">{{.}}</h2>
         {{ end }}
 
-        {{ with .Params.tags }}
-        <ul class="field is-grouped is-grouped-multiline">
-            {{ range . }}
-            <li class="control">
-                <a class="tag" href='{{ "/tags/" | relLangURL }}{{ . | urlize }}'>
-                    {{ . }}
-                </a>
-            </li>
-            {{ end }}
-        </ul>
-        {{ end }}
+        {{ partial "tags.html" . }}
 
         {{ with .Params.link }}
         <p>
