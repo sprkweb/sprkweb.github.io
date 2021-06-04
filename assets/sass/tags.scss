@@ -1,0 +1,12 @@
+$tags:
+  "ruby" #CC342D,
+  "sass" #cf649a,
+  "svg" #ffb238,
+  "bootstrap" #7952b3,
+  "snowpack" #2e5e82;
+
+@each $name, $color in $tags {
+    .tag.tag--#{$name} .icon {
+        color: $color;
+    }
+}

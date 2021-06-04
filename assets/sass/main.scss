@@ -29,6 +29,10 @@ $subtitle-size: 1.5rem;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 @import "../../node_modules/bulma/sass/base/_all.sass"; 
 @import "../../node_modules/bulma/sass/layout/_all.sass";
@@ -43,6 +47,8 @@ $fullhd-enabled: false;
 @import "../../node_modules/bulma/sass/form/tools.sass";
 @import "../../node_modules/bulma/sass/components/breadcrumb.sass";
 @import "../../node_modules/bulma/sass/components/level.sass";
+
+@import "tags";
 
 $desktop-real: $desktop - (2 * $gap);
 

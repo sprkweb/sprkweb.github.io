@@ -14,7 +14,9 @@
         {{ .Summary }}
     </div>
     
-    {{ partial "tags.html" . }}
+    {{ if .Params.tags }}
+    {{ partial "tags.html" (.GetTerms "tags") }}
+    {{ end }}
 
     <p><a href="{{ .Permalink }}" class="see-more-link">{{ i18n "see-more" . }} →</a></p>
 </div>

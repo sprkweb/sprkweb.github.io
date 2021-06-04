@@ -1,11 +1,25 @@
-{{ with .Params.tags }}
 <ul class="field is-grouped is-grouped-multiline">
     {{ range . }}
-    <li class="control">
-        <a class="tag" href='{{ "/tags/" | relLangURL }}{{ . | urlize }}'>
-            {{ . }}
-        </a>
-    </li>
+    {{ partial "tag" . }}
     {{ end }}
 </ul>
+
+{{ define "partials/tag" }}
+<li class="control">
+    <a class="tag tag--{{ .Title | urlize }}" href="{{ .Permalink }}">
+        {{ partial "tag-text" . }}
+    </a>
+</li>
+{{ end }}
+
+{{ define "partials/tag-text" }}
+    {{ $tagName := .LinkTitle }}
+    {{- if .Params.icon -}}
+        {{- partial "icon-text.html" (dict
+            "class" .Params.icon
+            "text" ($tagName)
+        ) -}}
+    {{- else -}}
+        {{- $tagName -}}
+    {{- end -}}
 {{ end }}
