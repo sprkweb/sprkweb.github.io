@@ -8,15 +8,14 @@
 
 {{ range .Pages }}
 <div class="list-project-summary">
-    <h2><a href="{{ .Permalink }}" class="title is-4">{{ .Title }}</a></h2>
-
     <div class="content">
+        <h2><a href="{{ .Permalink }}" class="title is-4">{{ .Title }}</a></h2>
+
         {{ .Summary }}
     </div>
     
     {{ partial "tags.html" . }}
 
-    <!-- TODO: level? -->
     <p><a href="{{ .Permalink }}" class="see-more-link">{{ i18n "see-more" . }} →</a></p>
 </div>
 {{ end }}

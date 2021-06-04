@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 main .hero .hero-body {
-    padding: 0 0 3rem 0;
+    padding: 1.5rem 0 3rem 0;
 }
 
 .hero .hero-body {
@@ -199,29 +199,29 @@ html, body {
 }
 
 .nav {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgb(192, 192, 192);
-
-    .homepage & {
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
-        padding-bottom: 0;
-        border-bottom: 0 none;
-    }
-
-    ul.menu {
-        list-style-type: none;
-        padding: 0;
-        
-        li {
-            display: inline;
-            margin-right: 1.5em;
+    padding: 0 1.5rem;
+    nav {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgb(192, 192, 192);
+    
+        .homepage & {
+            padding-bottom: 0;
+            border-bottom: 0 none;
         }
-    }
+    
+        ul.menu {
+            list-style-type: none;
+            padding: 0;
+            
+            li {
+                display: inline;
+                margin-right: 1.5em;
+            }
+        }
+    }    
 }
-
 
 .lang-list {
     @include font-details;
@@ -318,7 +318,7 @@ a.tag {
     .title {
         text-decoration: none;
     }
-    
+
     h2, .content {
         margin-bottom: 1rem;
     }
