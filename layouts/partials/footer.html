@@ -2,7 +2,7 @@
         <div class="columns">
 
             <div class="column contacts-list" id="contacts">
-                <h3>{{ i18n "contacts" }}</h3>
+                <h2>{{ i18n "contacts" }}</h3>
                 {{ range .Site.Params.contacts }}
                     <p>{{ partial "icon-text-link.html" . }}</p>
                 {{ end }}
