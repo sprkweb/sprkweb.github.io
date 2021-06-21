@@ -5,14 +5,7 @@
         <ul class="menu">
             {{ $currentPage := . }}
             {{ range .Site.Menus.main }}
-                <li>
-                    {{ $is_active := not ($currentPage.IsMenuCurrent "main" .) }}
-                    {{- if $is_active -}}
-                        <a href="{{ .URL }}">{{ .Name }}</a>
-                    {{- else -}}
-                        {{- .Name -}}
-                    {{- end -}}
-                </li>
+                {{ partial "nav-item" (dict "navPage" . "currentPage" $currentPage) }}
             {{ end }}
             <li>
                 <a href="#contacts">
@@ -26,3 +19,14 @@
         {{ partial "i18n.html" . }}
     </div>
 </nav>
+
+{{ define "partials/nav-item" }}
+<li>
+    {{ $is_active := not (.currentPage.IsMenuCurrent "main" .navPage) }}
+    {{- if $is_active -}}
+        <a href="{{ .navPage.URL }}">{{ .navPage.Name }}</a>
+    {{- else -}}
+        {{- .navPage.Name -}}
+    {{- end -}}
+</li>
+{{ end }}

@@ -3,7 +3,6 @@ defaultContentLanguage: ru
 staticDir:
   - static
   - node_modules/@fortawesome/fontawesome-free
-sectionPagesMenu: main
 taxonomies:
   tag: tags
 markup:
@@ -34,5 +33,9 @@ params:
       text: "sprkweb"
       link: "https://github.com/sprkweb"
       class: "fab fa-github"
+menu:
+  - main
 imaging:
-  quality: 85
+  quality: 85 # процентов
+  hint: picture
+  resampleFilter: Lanczos

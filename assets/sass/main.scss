@@ -88,27 +88,27 @@ main .hero .hero-body {
 }
 
 .hero .hero-body {
-    .title-inline {
-        display: inline-block;
-    }
-    
-    .subtitle-inline {
-        &:before {
-            content: '–';
-            margin: 0 0.5em;
-        }
-
-        &, &:before {
-            font-size: $title-size;
-            color: rgb(150, 150, 150);
-        }
-
-        display: inline-block;
-    }
-
     p {
         margin-bottom: .5rem;
     }
+}
+
+.title-inline {
+    display: inline-block;
+}
+
+.subtitle-inline {
+    &:before {
+        content: '–';
+        margin: 0 0.5em;
+    }
+
+    &, &:before {
+        font-size: $title-size;
+        color: rgb(150, 150, 150);
+    }
+
+    display: inline-block;
 }
 
 .content ul {

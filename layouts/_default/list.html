@@ -1,16 +1,11 @@
 {{ define "content" }}
-<div class="hero">
-    <div class="hero-body">
-        <h1 class="title">{{.Title}}</h1>
-        {{ with .Description }}<p>{{ . }}</p>{{ end }}
-    </div>
-</div>
+{{ partial "hero.html" . }}
 
-{{ range .Pages }}
+{{ range (.Pages.ByParam "years").Reverse }}
 <div class="list-project-summary">
     <div class="content">
         <h2><a href="{{ .Permalink }}" class="title is-4">{{ .Title }}</a></h2>
-
+        
         {{ .Summary }}
     </div>
     

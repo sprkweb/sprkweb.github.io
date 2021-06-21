@@ -1,10 +1,5 @@
 {{ define "content" }}
-<div class="hero">
-    <div class="hero-body">
-        <h1 class="title">{{.Title}}</h1>
-        {{ with .Description }}<p>{{ . }}</p>{{ end }}
-    </div>
-</div>
+{{ partial "hero.html" . }}
 
 <ul class="field is-grouped is-grouped-multiline">
 {{ range .Data.Terms.ByCount }}

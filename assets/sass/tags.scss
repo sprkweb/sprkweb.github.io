@@ -3,7 +3,9 @@ $tags:
   "sass" #cf649a,
   "svg" #ffb238,
   "bootstrap" #7952b3,
-  "snowpack" #2e5e82;
+  "snowpack" #2e5e82,
+  "hugo" #ff4088,
+  "font-awesome" #339af0;
 
 @each $name, $color in $tags {
     .tag.tag--#{$name} .icon {

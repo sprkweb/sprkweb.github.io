@@ -1,0 +1,30 @@
+{{ define "content" }}
+
+{{ partial "hero.html" . }}
+
+<div class="content">   
+    {{ with .Params.link }}
+    <p>
+        {{ partial "icon-text-link.html" (dict
+            "text" (i18n "view-project-link")
+            "link" .
+            "class" "fas fa-external-link-alt"
+        ) }}
+    </p>
+    {{ end }}
+
+    {{ with .Params.gh_repo }}
+    <p>
+        {{ partial "icon-text-link.html" (dict
+            "text" (i18n "view-on-github")
+            "link" .
+            "class" "fab fa-github-alt"
+        ) }}
+    </p>
+    {{ end }}
+</div>
+
+<div class="content">
+    {{.Content}}
+</div>
+{{ end }}
