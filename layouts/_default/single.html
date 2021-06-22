@@ -27,4 +27,9 @@
 <div class="content">
     {{.Content}}
 </div>
+
+<div class="content postscript">
+    {{ i18n "lastmod" }}: 
+    {{ .Lastmod.Year }}.{{ printf "%0.2d" .Lastmod.Month }}.{{ .Lastmod.Day }}
+</div>
 {{ end }}

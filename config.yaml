@@ -39,3 +39,4 @@ imaging:
   quality: 85 # процентов
   hint: picture
   resampleFilter: Lanczos
+enableGitInfo: true
