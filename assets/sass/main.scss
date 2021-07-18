@@ -52,25 +52,8 @@ $fullhd-enabled: false;
 
 $desktop-real: $desktop - (2 * $gap);
 
-@mixin sans-light {
-    font-family: 'Bahnschrift SemiCondensed', 'Trebuchet MS', sans-serif;
-    font-weight: 300;
-}
-
-@mixin sans-normal {
-    font-family: 'Bahnschrift', 'Trebuchet MS', sans-serif;
-    font-weight: 400;
-}
-
 a .icon i:before {
     display: inline-block;
-}
-
-
-.content {
-    p {
-        text-align: justify;
-    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -185,7 +168,6 @@ footer {
 #contacts:target {
     animation: highlight 1s 2 linear;
 }
-
 
 html, body {
     scroll-behavior: smooth;
