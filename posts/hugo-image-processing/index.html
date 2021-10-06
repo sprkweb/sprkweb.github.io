@@ -1,17 +1,86 @@
-<!doctype html><html lang=ru><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Интересным открытием оказалась
+<!doctype html><html lang=ru>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Интересным открытием оказалась
 система обработки изображений
 в Hugo, мне она очень понравилась: она довольно мощная
 и функциональная, но при этом с простым интерфейсом,
 который позволяет настраивать её несколькими строками кода.
 Кроме того, она поддерживает WebP -
-формат изображений, который мне также очень нравится."><title>Обработка изображений в Hugo</title><link rel=stylesheet href=/sass/main.min.45014926b6fb26ed76dd163f75b3ddcb1d98adbc7748b264022154402c74235f.css><link rel=preconnect href=https://fonts.gstatic.com><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel=stylesheet></head><body><div class=page><div class=nav><div class=container><nav class="level is-mobile" role=navigation aria-label="main navigation"><div class=level-left><ul class=menu><li><a href=/projects/>Проекты</a></li><li><a href=#contacts>Контакты</a></li></ul></div><div class=level-right></div></nav></div></div><main class=main><div class=container><div class="breadcrumb has-arrow-separator" aria-label=breadcrumbs><ul><li><a href=https://sprkweb.github.io/>Вадим Сапрыкин</a></li><li><a href=https://sprkweb.github.io/posts/>Записи</a></li><li class=is-active><a href=https://sprkweb.github.io/posts/hugo-image-processing/ aria-current=page>Обработка изображений в Hugo</a></li></ul></div><div class=hero><div class=hero-body><h1 class="title title-inline">Обработка изображений в Hugo</h1><ul class="field is-grouped is-grouped-multiline"><li class=control><a class="tag tag--hugo" href=https://sprkweb.github.io/tags/hugo/><span class=icon-text><span class=icon><i class="fas fa-h-square"></i></span>
-<span>Hugo</span></span></a></li></ul></div></div><div class=content></div><div class=content><p>Интересным открытием оказалась
+формат изображений, который мне также очень нравится.">
+<title>Обработка изображений в Hugo</title>
+<link rel=stylesheet href=/sass/main.min.5aa6689b4241b4fe65a46a34ef38c03f4afaf97c6879134cda97ec43e07b2ee5.css>
+<link rel=preconnect href=https://fonts.gstatic.com>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel=stylesheet>
+</head>
+<body>
+<div class=page>
+<div class=nav>
+<div class=container>
+<nav class="level is-mobile" role=navigation aria-label="main navigation">
+<div class=level-left>
+<ul class=menu>
+<li>
+<a href=/projects/>Проекты</a></li>
+<li>
+<a href=#contacts>
+Контакты
+</a>
+</li>
+</ul>
+</div>
+<div class=level-right>
+</div>
+</nav>
+</div>
+</div>
+<main class=main>
+<div class=container>
+<div class="breadcrumb has-arrow-separator" aria-label=breadcrumbs>
+<ul>
+<li>
+<a href=https://sprkweb.github.io/>Вадим Сапрыкин</a>
+</li>
+<li>
+<a href=https://sprkweb.github.io/posts/>Записи</a>
+</li>
+<li class=is-active>
+<a href=https://sprkweb.github.io/posts/hugo-image-processing/ aria-current=page>Обработка изображений в Hugo</a>
+</li>
+</ul>
+</div>
+<div class=hero>
+<div class=hero-body>
+<h1 class="title title-inline">Обработка изображений в Hugo</h1>
+<ul class="field is-grouped is-grouped-multiline">
+<li class=control>
+<a class="tag tag--hugo" href=https://sprkweb.github.io/tags/hugo/>
+<span class=icon-text>
+<span class=icon>
+<i class="fas fa-h-square"></i>
+</span>
+<span>Hugo</span>
+</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class=content>
+</div>
+<div class=content>
+<p>Интересным открытием оказалась
 <a href=https://gohugo.io/content-management/image-processing/ target=_blank rel=noreferrer>система обработки изображений</a>
 в Hugo, мне она очень понравилась: она довольно мощная
 и функциональная, но при этом с простым интерфейсом,
 который позволяет настраивать её несколькими строками кода.
 Кроме того, она поддерживает <a href=https://developers.google.com/speed/webp/ target=_blank rel=noreferrer>WebP</a> -
-формат изображений, который мне также очень нравится.</p><p>Для вставки изображений я сделал следующий шорткод:</p><p><a href=https://github.com/sprkweb/sprkweb.github.io/blob/30b0c2f9f491b776cddc35f6b2afd139cb7a2790/layouts/shortcodes/img.html target=_blank rel=noreferrer>layouts/shortcodes/img.html</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{ $original := $.Page.Resources.GetMatch (.Get 0) }}
+формат изображений, который мне также очень нравится.</p>
+<p>Для вставки изображений я сделал следующий шорткод:</p>
+<p><a href=https://github.com/sprkweb/sprkweb.github.io/blob/30b0c2f9f491b776cddc35f6b2afd139cb7a2790/layouts/shortcodes/img.html target=_blank rel=noreferrer>layouts/shortcodes/img.html</a></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{ $original := $.Page.Resources.GetMatch (.Get 0) }}
 {{ $optimized := $original.Fit &#34;896x3072 webp&#34; }}
 
 &lt;<span style=color:#f92672>figure</span>&gt;
@@ -24,36 +93,126 @@
 	&lt;/<span style=color:#f92672>a</span>&gt;
 	&lt;<span style=color:#f92672>figcaption</span>&gt;{{ .Get 1 }}&lt;/<span style=color:#f92672>figcaption</span>&gt;
 &lt;/<span style=color:#f92672>figure</span>&gt;
-</code></pre></div><h2 id=использование-внутри-markdown>Использование внутри Markdown</h2><pre><code class=language-code data-lang=code>{{&lt; img &quot;myimage.png&quot; &quot;Моя любимая картинка&quot; &gt;}}
-</code></pre><h2 id=суть-работы>Суть работы</h2><ol><li>В качестве первого аргумента <em>берётся изображение</em> из каталога страницы
-(<a href=https://gohugo.io/content-management/page-resources/ target=_blank rel=noreferrer>Page Resource</a>)</li><li>Если изображение шире определённого значения,
+</code></pre></div><h2 id=использование-внутри-markdown>Использование внутри Markdown</h2>
+<pre tabindex=0><code class=language-code data-lang=code>{{&lt; img &quot;myimage.png&quot; &quot;Моя любимая картинка&quot; &gt;}}
+</code></pre><h2 id=суть-работы>Суть работы</h2>
+<ol>
+<li>В качестве первого аргумента <em>берётся изображение</em> из каталога страницы
+(<a href=https://gohugo.io/content-management/page-resources/ target=_blank rel=noreferrer>Page Resource</a>)</li>
+<li>Если изображение шире определённого значения,
 оно <em>масштабируется</em> до этой ширины с сохранением пропорций:
 у меня это значение чуть меньше максимальной ширины текстового
-блока на странице.</li><li>Оптимизированное изображение сохраняется в формате WebP;</li><li>Так как такое ограничение по размеру может быть мало
+блока на странице.</li>
+<li>Оптимизированное изображение сохраняется в формате WebP;</li>
+<li>Так как такое ограничение по размеру может быть мало
 для некоторых изображений, пользователь может открыть
-нетронутый оригинал в новой вкладке, нажав на картинку;</li><li>Оптимизированное изображение показывается в тексте страницы вместе
+нетронутый оригинал в новой вкладке, нажав на картинку;</li>
+<li>Оптимизированное изображение показывается в тексте страницы вместе
 с подписью из второго аргумента шорткода для доступности и случаев,
-когда изображение не подгружается;</li><li>Для старых браузеров, которые не поддерживают WebP и/или тег picture,
-показывается исходное изображение.</li></ol><p>И главное - все трансформации происходят на этапе сборки
+когда изображение не подгружается;</li>
+<li>Для старых браузеров, которые не поддерживают WebP и/или тег picture,
+показывается исходное изображение.</li>
+</ol>
+<p>И главное - все трансформации происходят на этапе сборки
 проекта автоматически, то есть в каталоге с контентом
 не хранится по две копии одной картинки в разных форматах,
-что очень удобно и соответствует принципу DRY.</p><p>При желании можно аналогичным образом сделать несколько
+что очень удобно и соответствует принципу DRY.</p>
+<p>При желании можно аналогичным образом сделать несколько
 оптимизированных изображений под разные размеры экранов,
 используя <a href=https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#the_media_attribute target=_blank rel=noreferrer>аттрибут media</a>
-у тега source.</p><h2 id=настройки>Настройки</h2><p>По умолчанию качество изображений не самое лучшее, особенно
-в случаях, когда они масштабируются до нужной ширины.</p><p>Изменение настроек в файле
+у тега source.</p>
+<h2 id=настройки>Настройки</h2>
+<p>По умолчанию качество изображений не самое лучшее, особенно
+в случаях, когда они масштабируются до нужной ширины.</p>
+<p>Изменение настроек в файле
 <a href=https://github.com/sprkweb/sprkweb.github.io/blob/master/config.yaml target=_blank rel=noreferrer>config.yaml</a>
 позволило значительно улучшить внешний вид
-оптимизированных изображений:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>imaging</span>:
+оптимизированных изображений:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>imaging</span>:
   <span style=color:#f92672>quality</span>: <span style=color:#ae81ff>85</span> <span style=color:#75715e># процентов</span>
   <span style=color:#f92672>hint</span>: <span style=color:#ae81ff>picture</span>
   <span style=color:#f92672>resampleFilter</span>: <span style=color:#ae81ff>Lanczos</span>
 </code></pre></div><p>В моём случае изображениями в основном являются скриншоты,
 для других случаев (например, фотографий), возможно,
-настройки стоит подкорректировать.</p><h2 id=результат>Результат</h2><p>На странице <a href=/projects/octava-page/>Octava Page</a>
-<em>без масштабирования</em> изображений размер изменился следующим образом:</p><table><thead><tr><th>Исходный формат</th><th>JPEG</th><th>PNG</th></tr></thead><tbody><tr><td>Исходный размер</td><td>15,95 Кб</td><td>21,33 Кб</td></tr><tr><td>Размер WebP</td><td>4,45 Кб</td><td>15,95 Кб</td></tr></tbody></table><p>Разница невооружённым глазом для меня едва заметна при сравнении рядом.</p></div><div class="content postscript">Дата последнего обновления страницы:
-2021.07.18</div></div></main><footer class=footer><div class=container><div class=columns><div class="column contacts-list" id=contacts><h2>Контакты</h3><p><a href=https://t.me/saqew target=_blank rel=noreferrer><span class=icon-text><span class=icon><i title=Telegram class="fab fa-telegram"></i></span>
-<span>@saqew</span></span></a></p><p><a href=mailto:sprkweb@ya.ru target=_blank rel=noreferrer><span class=icon-text><span class=icon><i title=Email class="fas fa-envelope"></i></span>
-<span>sprkweb@ya.ru</span></span></a></p><p><a href=https://github.com/sprkweb target=_blank rel=noreferrer><span class=icon-text><span class=icon><i title=GitHub class="fab fa-github"></i></span>
-<span>sprkweb</span></span></a></p></div><div class=column><p class=block><a href=https://github.com/sprkweb/sprkweb.github.io target=_blank rel=noreferrer><span class=icon-text><span>Этот сайт на GitHub</span>
-<span class=icon><i class="fab fa-github-alt"></i></span></span></a></p><p class=block><a href=https://creativecommons.org/licenses/by/4.0/ target=_blank rel=noreferrer title="Creative Commons Attribution 4.0 International" class=cc-by><span class="icon is-small"><i class="fab fa-creative-commons"></i></span><span class="icon is-small"><i class="fab fa-creative-commons-by"></i></span></a></p></div></div></div></footer></div></body></html>
+настройки стоит подкорректировать.</p>
+<h2 id=результат>Результат</h2>
+<p>На странице <a href=/projects/octava-page/>Octava Page</a>
+<em>без масштабирования</em> изображений размер изменился следующим образом:</p>
+<table>
+<thead>
+<tr>
+<th>Исходный формат</th>
+<th>JPEG</th>
+<th>PNG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Исходный размер</td>
+<td>15,95 Кб</td>
+<td>21,33 Кб</td>
+</tr>
+<tr>
+<td>Размер WebP</td>
+<td>4,45 Кб</td>
+<td>15,95 Кб</td>
+</tr>
+</tbody>
+</table>
+<p>Разница невооружённым глазом для меня едва заметна при сравнении рядом.</p>
+</div>
+<div class="content postscript">
+Дата последнего обновления страницы:
+2021.10.6
+</div>
+</div>
+</main>
+<footer class=footer>
+<div class=container>
+<div class=columns>
+<div class="column contacts-list" id=contacts>
+<h2>Контакты</h3>
+<p><a href=https://t.me/saqew target=_blank rel=noreferrer><span class=icon-text>
+<span class=icon>
+<i title=Telegram class="fab fa-telegram"></i>
+</span>
+<span>@saqew</span>
+</span>
+</a></p>
+<p><a href=mailto:sprkweb@ya.ru target=_blank rel=noreferrer><span class=icon-text>
+<span class=icon>
+<i title=Email class="fas fa-envelope"></i>
+</span>
+<span>sprkweb@ya.ru</span>
+</span>
+</a></p>
+<p><a href=https://github.com/sprkweb target=_blank rel=noreferrer><span class=icon-text>
+<span class=icon>
+<i title=GitHub class="fab fa-github"></i>
+</span>
+<span>sprkweb</span>
+</span>
+</a></p>
+</div>
+<div class=column>
+<p class=block>
+<a href=https://github.com/sprkweb/sprkweb.github.io target=_blank rel=noreferrer><span class=icon-text>
+<span>Этот сайт на GitHub</span>
+<span class=icon>
+<i class="fab fa-github-alt"></i>
+</span>
+</span>
+</a>
+</p>
+<p class=block>
+<a href=https://creativecommons.org/licenses/by/4.0/ target=_blank rel=noreferrer title="Creative Commons Attribution 4.0 International" class=cc-by>
+<span class="icon is-small"><i class="fab fa-creative-commons"></i></span><span class="icon is-small"><i class="fab fa-creative-commons-by"></i></span>
+</a>
+</p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>
