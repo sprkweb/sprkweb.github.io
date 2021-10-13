@@ -52,6 +52,12 @@ $fullhd-enabled: false;
 
 $desktop-real: $desktop - (2 * $gap);
 
+:root {
+    // Oh yeah, big brain time
+    // (SASS variable stays for backwards compatibility)
+    --brand-color: #{$brand-color};
+}
+
 a .icon i:before {
     display: inline-block;
 }
@@ -154,19 +160,6 @@ footer {
     > h2, > p {
         margin-bottom: 0.5rem;
     }
-}
-
-@keyframes highlight {
-    from, to {
-        outline: 5px solid rgba(255, 255, 255, 0);
-    }
-    50% {
-        outline: 5px solid $brand-color;
-    }
-}
-
-#contacts:target {
-    animation: highlight 1s 2 linear;
 }
 
 html, body {

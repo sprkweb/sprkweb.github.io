@@ -7,6 +7,22 @@
                     <p>{{ partial "icon-text-link.html" . }}</p>
                 {{ end }}
             </div>
+            <script>
+                const contactsEl = document.getElementById('contacts');
+                const highlightAnimation = [
+                    { outline: '5px solid rgba(255, 255, 255, 0)' },
+                    { outline: '5px solid var(--brand-color)', offset: 0.5 },
+                    { outline: '5px solid rgba(255, 255, 255, 0)' }
+                ];
+
+                document.getElementById('contacts-link').addEventListener('click', () => 
+                    contactsEl.animate(highlightAnimation, {
+                        duration: 1000,
+                        iterations: 2,
+                        easing: 'linear'
+                    })
+                );
+            </script>
 
             <div class="column">
                 <p class="block">
