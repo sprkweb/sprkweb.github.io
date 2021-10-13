@@ -12,10 +12,10 @@ markup:
 languages:
   ru:
     title: Вадим Сапрыкин
-    description: "Сайт веб-разработчика Вадима Сапрыкина"
+    description: "Вадим Сапрыкин - веб-разработчик, заинтересованный в изучении почти всего, пишет свои мысли о разных технологиях, идеях и своих проектах."
   en:
     title: Vadim Saprykin
-    description: "Site of a web developer Vadim Saprykin"
+    description: "Vadim Saprykin is a web developer interested in almost anything."
 params:
   githubLink: "https://github.com/sprkweb/sprkweb.github.io"
   contacts:
