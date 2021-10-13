@@ -315,6 +315,15 @@ a.tag {
         margin-bottom: 1rem;
     }
 
+    .project-summary-header {
+        h2 {
+            margin-top: 0;
+        }
+
+        display: flex;
+        gap: 1em;
+    }
+
     margin-bottom: 3rem;
 }
 

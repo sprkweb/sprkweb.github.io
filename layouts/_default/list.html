@@ -1,11 +1,24 @@
 {{ define "content" }}
 {{ partial "hero.html" . }}
 
+{{ $curSection := . }}
+
 {{ range (.Pages.ByParam "years").Reverse }}
 <div class="list-project-summary">
     <div class="content">
-        <h2><a href="{{ .Permalink }}" class="title is-4">{{ .Title }}</a></h2>
+        <div class="project-summary-header">
+            {{/* Unless the page's main section (for example, Post) is the current list (for example, Tag)... */}}
+            {{ with .CurrentSection }}
+                {{ if ne $curSection . }}
+                    {{/* ... we'll print its main section where it belongs (e.g. Post) */}}
+                    <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
+                {{ end }}
+            {{ end }}
+
+            <h2><a href="{{ .Permalink }}" class="title is-4">{{ .Title }}</a></h2>
+        </div>
         
+
         {{ .Summary }}
     </div>
     
