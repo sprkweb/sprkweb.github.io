@@ -5,7 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="Сайт веб-разработчика Вадима Сапрыкина">
 <title>Python</title>
-<link rel=stylesheet href=/sass/main.min.5aa6689b4241b4fe65a46a34ef38c03f4afaf97c6879134cda97ec43e07b2ee5.css>
+<link rel=stylesheet href=/sass/main.min.73d241a23e7ec8e1696cddc1e335b3336185da20cdfff3900e74ea6a5a744f72.css>
 <link rel=preconnect href=https://fonts.gstatic.com>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel=stylesheet>
 </head>
@@ -19,7 +19,7 @@
 <li>
 <a href=/projects/>Проекты</a></li>
 <li>
-<a href=#contacts>
+<a href=#contacts id=contacts-link>
 Контакты
 </a>
 </li>
@@ -52,7 +52,10 @@
 </div>
 <div class=list-project-summary>
 <div class=content>
+<div class=project-summary-header>
+<a class=tag href=https://sprkweb.github.io/projects/>Проекты</a>
 <h2><a href=https://sprkweb.github.io/projects/commenti/ class="title is-4">Commenti</a></h2>
+</div>
 <p>Commenti - система встраиваемых комментариев.</p>
 </div>
 <ul class="field is-grouped is-grouped-multiline">
@@ -188,6 +191,7 @@
 </span>
 </a></p>
 </div>
+<script>const contactsEl=document.getElementById('contacts'),highlightAnimation=[{outline:'5px solid rgba(255, 255, 255, 0)'},{outline:'5px solid var(--brand-color)',offset:.5},{outline:'5px solid rgba(255, 255, 255, 0)'}];document.getElementById('contacts-link').addEventListener('click',()=>contactsEl.animate(highlightAnimation,{duration:1e3,iterations:2,easing:'linear'}))</script>
 <div class=column>
 <p class=block>
 <a href=https://github.com/sprkweb/sprkweb.github.io target=_blank rel=noreferrer><span class=icon-text>
