@@ -15,13 +15,15 @@
                     { outline: '5px solid rgba(255, 255, 255, 0)' }
                 ];
 
-                document.getElementById('contacts-link').addEventListener('click', () => 
-                    contactsEl.animate(highlightAnimation, {
-                        duration: 1000,
-                        iterations: 2,
-                        easing: 'linear'
-                    })
-                );
+                document.querySelectorAll('a[href="#contacts"]')
+                    .forEach((el) => 
+                        el.addEventListener('click', () => 
+                            contactsEl.animate(highlightAnimation, {
+                                duration: 1000,
+                                iterations: 2,
+                                easing: 'linear'
+                            })
+                ));
             </script>
 
             <div class="column">
