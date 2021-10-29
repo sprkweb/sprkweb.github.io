@@ -7,7 +7,7 @@
 <title>Font Awesome</title>
 <link rel=icon href=/favicon.ico sizes=any>
 <link rel=icon href=/icon.svg type=image/svg+xml>
-<link rel=stylesheet href=/sass/main.min.73d241a23e7ec8e1696cddc1e335b3336185da20cdfff3900e74ea6a5a744f72.css>
+<link rel=stylesheet href=/sass/main.min.01b4faff5a9749ba5978e04a5ab12a7c5246f5766650f55276199c57f382ff62.css>
 <link rel=preconnect href=https://fonts.gstatic.com>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel=stylesheet>
 </head>
@@ -21,7 +21,7 @@
 <li>
 <a href=/projects/>Проекты</a></li>
 <li>
-<a href=#contacts id=contacts-link>
+<a href=#contacts>
 Контакты
 </a>
 </li>
@@ -135,7 +135,7 @@
 </span>
 </a></p>
 </div>
-<script>const contactsEl=document.getElementById('contacts'),highlightAnimation=[{outline:'5px solid rgba(255, 255, 255, 0)'},{outline:'5px solid var(--brand-color)',offset:.5},{outline:'5px solid rgba(255, 255, 255, 0)'}];document.getElementById('contacts-link').addEventListener('click',()=>contactsEl.animate(highlightAnimation,{duration:1e3,iterations:2,easing:'linear'}))</script>
+<script>const contactsEl=document.getElementById('contacts'),highlightAnimation=[{outline:'5px solid rgba(255, 255, 255, 0)'},{outline:'5px solid var(--brand-color)',offset:.5},{outline:'5px solid rgba(255, 255, 255, 0)'}];document.querySelectorAll('a[href="#contacts"]').forEach(a=>a.addEventListener('click',()=>contactsEl.animate(highlightAnimation,{duration:1e3,iterations:2,easing:'linear'})))</script>
 <div class=column>
 <p class=block>
 <a href=https://github.com/sprkweb/sprkweb.github.io target=_blank rel=noreferrer><span class=icon-text>
