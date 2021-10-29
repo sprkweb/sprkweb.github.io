@@ -2,13 +2,11 @@
 <ul class="lang-list">
     {{ $currentLang := .Lang }}
     {{ range .AllTranslations }}
-    <li>
         {{ if eq .Lang $currentLang }}
-        {{ .Lang }}
+            <li class="current-lang">{{ .Lang }}</li>
         {{ else }}
-        <a href="{{ .Permalink }}">{{ .Lang }}</a>
+            <li><a href="{{ .Permalink }}">{{ .Lang }}</a></li>
         {{ end }}
-    </li>
     {{ end }}
 </ul>
 {{ end }}

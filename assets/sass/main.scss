@@ -209,15 +209,16 @@ html, body {
 }
 
 .lang-list {
-    @include font-details;
-    text-align: right;
+    display: inline-flex;
+    gap: 1.5ch;
 
     li {
-        display: inline;
         text-transform: uppercase;
+        width: 3ch;
+        text-align: center;
 
-        &:not(:first-child):before {
-            content: " | "
+        &.current-lang {
+            outline: 1px solid;
         }
     }
 }
