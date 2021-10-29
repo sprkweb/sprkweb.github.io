@@ -123,34 +123,33 @@ a {
     font-weight: 400;
 }
 
-footer {
-    @include font-details;
+footer a, .links-block a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: $body-weight;
 
-    a {
-        text-decoration: none;
-        color: inherit;
-        font-weight: $body-weight;
-
-        .icon-text {
-            span {
-                border-bottom: 1px solid;
-            }
-            .icon {
-                border: 0 none;
-            }
+    .icon-text {
+        span {
+            border-bottom: 1px solid;
         }
-        
-        .icon, .icon i, .icon i:before {
-            text-decoration: none;
+        .icon {
+            border: 0 none;
         }
     }
+    
+    .icon, .icon i, .icon i:before {
+        text-decoration: none;
+    }
+}
 
+footer {
     @media (min-width: $tablet) {
         .column:last-of-type {
             text-align: right;
         }
     }
 }
+
 
 .contacts-list {
     > h2 {
@@ -323,4 +322,13 @@ a.tag {
 
 .postscript {
     color: rgb(150, 150, 150);
+}
+
+.links-block {
+    padding: 1em;
+    background: #fafafa;
+
+    &:empty {
+        display: none;
+    }
 }
