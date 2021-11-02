@@ -1,7 +1,8 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 
-{{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
+{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true) }}
+{{ $style := resources.Get "sass/main.scss" | toCSS $options }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
 <link rel="preconnect" href="https://fonts.gstatic.com">
