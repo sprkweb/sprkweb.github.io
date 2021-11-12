@@ -1,10 +1,11 @@
 {{ define "content" }}
-{{ partial "hero.html" . }}
+<div class="container viewport-padding">
+    {{ partial "hero.html" . }}
 
-<ul class="field is-grouped is-grouped-multiline">
-{{ range .Data.Terms.ByCount }}
-    {{ partial "tag" .Page }}
-{{ end }}
-</ul>
-
+    <ul class="field is-grouped is-grouped-multiline">
+    {{ range .Data.Terms.ByCount }}
+        {{ partial "tag" .Page }}
+    {{ end }}
+    </ul>
+</div>
 {{ end }}

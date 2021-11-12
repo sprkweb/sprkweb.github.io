@@ -16,19 +16,19 @@
 <body>
     <div class="page">
         {{ block "main" . }}
-        <div class="nav">
+        <div class="nav viewport-padding">
             <div class="container">
                 {{ partial "navigation.html" . }}
             </div>
         </div>
         
         <main class="main">
-            <div class="container">
+            <div class="container viewport-padding">
                 {{ partial "breadcrumbs.html" . }}
-
-                {{ block "content" . }}
-                {{ end }}
             </div>
+
+            {{ block "content" . }}
+            {{ end }}
         </main>
         {{ end }}
         

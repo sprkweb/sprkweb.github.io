@@ -173,7 +173,6 @@ html, body {
 
     > .main {
         flex: 1 0 auto;
-        padding: 0 1.5rem;
     }
 
     > .footer {
@@ -182,8 +181,12 @@ html, body {
     }
 }
 
-.nav {
+.viewport-padding {
     padding: 0 1.5rem;
+    box-sizing: content-box;
+}
+
+.nav {
     nav {
         margin-top: 1rem;
         margin-bottom: 2rem;
@@ -325,7 +328,7 @@ a.tag {
 }
 
 .links-block {
-    padding: 1em;
+    padding: 1em 0;
     background: #fafafa;
 
     &:empty {

@@ -1,32 +1,34 @@
 {{ define "content" }}
-{{ partial "hero.html" . }}
+<div class="container viewport-padding">
+    {{ partial "hero.html" . }}
 
-{{ $curSection := . }}
+    {{ $curSection := . }}
 
-{{ range (.Pages.ByParam "years").Reverse }}
-<div class="list-project-summary">
-    <div class="content">
-        <div class="project-summary-header">
-            {{/* Unless the page's main section (for example, Post) is the current list (for example, Tag)... */}}
-            {{ with .CurrentSection }}
-                {{ if ne $curSection . }}
-                    {{/* ... we'll print its main section where it belongs (e.g. Post) */}}
-                    <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ range (.Pages.ByParam "years").Reverse }}
+    <div class="list-project-summary">
+        <div class="content">
+            <div class="project-summary-header">
+                {{/* Unless the page's main section (for example, Post) is the current list (for example, Tag)... */}}
+                {{ with .CurrentSection }}
+                    {{ if ne $curSection . }}
+                        {{/* ... we'll print its main section where it belongs (e.g. Post) */}}
+                        <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{ end }}
                 {{ end }}
-            {{ end }}
 
-            <h2><a href="{{ .Permalink }}" class="title is-4">{{ .Title }}</a></h2>
+                <h2><a href="{{ .Permalink }}" class="title is-4">{{ .Title }}</a></h2>
+            </div>
+            
+
+            {{ .Summary }}
         </div>
         
+        {{ if .Params.tags }}
+        {{ partial "tags.html" (.GetTerms "tags") }}
+        {{ end }}
 
-        {{ .Summary }}
+        <p><a href="{{ .Permalink }}" class="see-more-link">{{ i18n "see-more" . }} →</a></p>
     </div>
-    
-    {{ if .Params.tags }}
-    {{ partial "tags.html" (.GetTerms "tags") }}
     {{ end }}
-
-    <p><a href="{{ .Permalink }}" class="see-more-link">{{ i18n "see-more" . }} →</a></p>
-</div>
-{{ end }}
+    </div>
 {{ end }}
