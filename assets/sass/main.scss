@@ -38,7 +38,6 @@ $fullhd-enabled: false;
 @import "../../node_modules/bulma/sass/layout/_all.sass";
 @import "../../node_modules/bulma/sass/grid/columns.sass";
 @import "../../node_modules/bulma/sass/elements/other.sass";
-@import "../../node_modules/bulma/sass/elements/container.sass";
 @import "../../node_modules/bulma/sass/elements/content.sass";
 @import "../../node_modules/bulma/sass/elements/title.sass";
 @import "../../node_modules/bulma/sass/elements/icon.sass";
@@ -49,8 +48,6 @@ $fullhd-enabled: false;
 @import "../../node_modules/bulma/sass/components/level.sass";
 
 @import "tags";
-
-$desktop-real: $desktop - (2 * $gap);
 
 :root {
     // Oh yeah, big brain time
@@ -181,12 +178,41 @@ html, body {
     }
 }
 
-.viewport-padding {
-    padding: 0 1.5rem;
+$viewport-padding: 1.5rem;
+@mixin viewport-padding {
+    padding: 0 $viewport-padding;
     box-sizing: content-box;
+}
+.viewport-padding {
+    @include viewport-padding;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: $desktop;
+}
+
+.content-centered {
+    @include viewport-padding;
+    
+    display: grid;
+    grid-template-columns: 
+        [viewport-start] minmax($viewport-padding, 1fr)
+        [content-start] minmax(0, $desktop) [content-end]
+        minmax($viewport-padding, 1fr) [viewport-end];
+
+    & > * {
+        grid-column: content;
+    }
+
+    & > .full-width {
+        grid-column: viewport;
+    }
 }
 
 .nav {
+    @include viewport-padding;
+
     nav {
         margin-top: 1rem;
         margin-bottom: 2rem;
