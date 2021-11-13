@@ -4,6 +4,7 @@
     {{ partial "hero.html" . }}
 </div>
 
+{{ if or .Params.link .Params.gh_repo }}
 <div class="content links-block">
     <div class="container viewport-padding">
         {{ with .Params.link }}
@@ -27,6 +28,7 @@
         {{ end }}
     </div>
 </div>
+{{ end }}
 
 <div class="content content-centered">
     {{.Content}}
