@@ -192,9 +192,7 @@ $viewport-padding: 1.5rem;
     max-width: $desktop;
 }
 
-.content-centered {
-    @include viewport-padding;
-    
+.content-centered {    
     display: grid;
     grid-template-columns: 
         [viewport-start] minmax($viewport-padding, 1fr)
