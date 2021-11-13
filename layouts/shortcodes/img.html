@@ -1,7 +1,7 @@
 {{ $original := $.Page.Resources.GetMatch (.Get 0) }}
 {{ $optimized := $original.Fit "896x3072 webp" }}
 
-<figure>
+<figure class="full-width">
 	<a href="{{ $original.RelPermalink }}" target="_blank">
 		<picture>
 			<source type="image/webp" srcset="{{ $optimized.RelPermalink }}">
