@@ -15,7 +15,8 @@ $tags:
   "rollup" #f33,
   "django" #0C4B33,
   "bulma" #00d1b2,
-  "svelte" #ff3e00;
+  "svelte" #ff3e00,
+  "pwa" #5a06c9;
 
 @each $name, $color in $tags {
     .tag.tag--#{$name} .icon {
