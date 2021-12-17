@@ -1,0 +1,18 @@
+.links-block a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: $body-weight;
+
+    .icon-text {
+        span {
+            border-bottom: 1px solid;
+        }
+        .icon {
+            border: 0 none;
+        }
+    }
+    
+    .icon, .icon i, .icon i:before {
+        text-decoration: none;
+    }
+}

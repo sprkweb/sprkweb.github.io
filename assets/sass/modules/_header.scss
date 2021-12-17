@@ -1,0 +1,14 @@
+.lang-list {
+    display: inline-flex;
+    gap: 1.5ch;
+
+    li {
+        text-transform: uppercase;
+        width: 3ch;
+        text-align: center;
+
+        &.current-lang {
+            outline: 1px solid;
+        }
+    }
+}

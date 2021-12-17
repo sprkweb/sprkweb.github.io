@@ -1,0 +1,72 @@
+.breadcrumb {
+    margin-bottom: 3rem;
+
+    li.is-active a {
+        text-decoration: none;
+    }
+}
+
+main .hero .hero-body {
+    padding: 1.5rem 0 3rem 0;
+}
+
+.hero .hero-body {
+    p {
+        margin-bottom: .5rem;
+    }
+}
+
+.title-inline {
+    display: inline-block;
+}
+
+.subtitle-inline {
+    &:before {
+        content: '–';
+        margin: 0 0.5em;
+    }
+
+    &, &:before {
+        font-size: $title-size;
+        color: rgb(150, 150, 150);
+    }
+
+    display: inline-block;
+}
+
+.list-project-summary {
+    .title {
+        text-decoration: none;
+    }
+
+    h2, .content {
+        margin-bottom: 1rem;
+    }
+
+    .project-summary-header {
+        h2 {
+            margin-top: 0;
+        }
+
+        display: flex;
+        gap: 1em;
+    }
+
+    margin-bottom: 3rem;
+}
+
+a.tag {
+    &:link, &:active, &:hover, &:focus, &:visited {
+        font-size: 1rem;
+        text-decoration: none;
+    }
+}
+
+.postscript {
+    color: rgb(150, 150, 150);
+}
+
+.info-block {
+    padding: 1em 0;
+    background: #fafafa;
+}

@@ -1,0 +1,57 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+
+    > .main {
+        flex: 1 0 auto;
+    }
+
+    > .footer {
+        margin-top: 2rem;
+        flex: 0 0 auto;
+    }
+}
+
+$viewport-padding: 1.5rem;
+@mixin viewport-padding {
+    padding: 0 $viewport-padding;
+    box-sizing: content-box;
+}
+.viewport-padding {
+    @include viewport-padding;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: $desktop;
+}
+
+.nav {
+    @include viewport-padding;
+
+    nav {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgb(192, 192, 192);
+    
+        ul.menu {
+            list-style-type: none;
+            padding: 0;
+            
+            li {
+                display: inline;
+                margin-right: 1.5em;
+            }
+        }
+    }
+}
+
+footer {
+    @media (min-width: $tablet) {
+        .column:last-of-type {
+            text-align: right;
+        }
+    }
+}
