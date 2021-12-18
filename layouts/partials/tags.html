@@ -16,7 +16,7 @@
     {{ $tagName := .LinkTitle }}
     {{- if .Params.icon -}}
         {{- partial "icon-text.html" (dict
-            "class" .Params.icon
+            "iconClass" .Params.icon
             "text" ($tagName)
         ) -}}
     {{- else -}}

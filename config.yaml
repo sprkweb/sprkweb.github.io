@@ -22,17 +22,17 @@ params:
     - title: Telegram
       text: "@saqew"
       link: "https://t.me/saqew"
-      class: "fab fa-telegram"
+      iconClass: "fab fa-telegram"
 
     - title: Email
       text: "sprkweb@ya.ru"
       link: "mailto:sprkweb@ya.ru"
-      class: "fas fa-envelope"
+      iconClass: "fas fa-envelope"
 
     - title: GitHub
       text: "sprkweb"
       link: "https://github.com/sprkweb"
-      class: "fab fa-github"
+      iconClass: "fab fa-github"
 menu:
   - main
 imaging:

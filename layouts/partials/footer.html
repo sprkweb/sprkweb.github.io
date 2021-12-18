@@ -31,7 +31,7 @@
                     {{ partial "icon-text-link.html" (dict
                         "text" (i18n "this-site-on-github")
                         "link" .Site.Params.githubLink
-                        "class" "fab fa-github-alt"
+                        "iconClass" "fab fa-github-alt"
                         "reverse" true
                     ) }}
                 </p>
@@ -40,8 +40,15 @@
                     <a href="https://creativecommons.org/licenses/by/4.0/" 
                         target="_blank" rel="noreferrer"
                         title="Creative Commons Attribution 4.0 International"
-                        class="cc-by">
-                        <span class="icon is-small"><i class="fab fa-creative-commons"></i></span><span class="icon is-small"><i class="fab fa-creative-commons-by"></i></span>
+                        class="no-gap-inline">
+                        {{- partial "icon.html" (dict
+                            "iconClass" "fab fa-creative-commons"
+                            "class" "is-small"
+                        ) -}}
+                        {{- partial "icon.html" (dict
+                            "iconClass" "fab fa-creative-commons-by"
+                            "class" "is-small"
+                        ) -}}
                     </a>
                 </p>
             </div>
