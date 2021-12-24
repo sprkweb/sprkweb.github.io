@@ -1,4 +1,4 @@
-baseURL: "https://sprkweb.github.io/"
+baseURL: "https://www.sprkweb.dev/"
 defaultContentLanguage: ru
 staticDir:
   - static
