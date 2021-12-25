@@ -54,10 +54,10 @@ $fullhd-enabled: false;
 @import "../../node_modules/bulma/sass/components/level.sass";
 
 @import "base";
+@import "utils";
 @import "layout/common";
 @import "layout/normal";
 @import "layout/landing";
-@import "utils";
 @import "modules/header";
 @import "modules/footer";
 @import "modules/business-card";

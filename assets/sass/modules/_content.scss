@@ -1,15 +1,10 @@
 .content {
     ul {
-        list-style: none;
         margin-left: 0;
-    
+        text-indent: 0.5em;
+
         li {
-            &:before {
-                content: '–';
-                margin-right: 0.5em;
-            }
-    
-            text-indent: 0.5em;
+            list-style: '– ' inside;
         }
     }
 

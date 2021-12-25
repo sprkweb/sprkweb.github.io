@@ -1,6 +1,7 @@
 ---
 title: "Vadim Saprykin"
 subtitle: "Developer"
+namebanner: "name-banner.en.svg"
 ---
 
 - Loves and has knowledge in __web development__;

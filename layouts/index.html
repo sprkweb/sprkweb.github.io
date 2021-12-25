@@ -1,23 +1,31 @@
 {{ define "main" }}
-<main class="homepage">
-    <div class="nav viewport-padding">
-        {{ partial "navigation.html" . }}
-    </div>
-    
-    <div class="name-banner">
-        <div class="name">
-            <h1 class="title">{{.Title}}</h1>
-    
-            {{ with .Params.subtitle }}
-            <h2 class="subtitle">{{.}}</h2>
-            {{ end }}
+<main class="landing">
+    <div class="full-height-section">
+        <div class="nav viewport-padding">
+            {{ partial "navigation.html" . }}
         </div>
-
-        <div class="name-intro">
-            <div class="content">
-                {{.Content}}
+        
+        <article class="business-card">
+            <div class="name">
+                <h1 class="title">{{.Title}}</h1>
+        
+                {{ with .Params.subtitle }}
+                <h2 class="subtitle">{{.}}</h2>
+                {{ end }}
             </div>
-        </div>
+
+            {{ with .Resources.GetMatch .Params.namebanner }}
+                <div class="name-banner" aria-hidden="true">
+                    {{ .Content | safeHTML }}
+                </div>
+            {{ end }}
+    
+            <div class="main-points">
+                <div class="content">
+                    {{.Content}}
+                </div>
+            </div>
+        </article>
     </div>
 </main>
 {{ end }}

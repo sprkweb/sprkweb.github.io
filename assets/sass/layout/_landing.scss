@@ -1,4 +1,15 @@
-.homepage .nav nav {
-    padding-bottom: 0;
-    border-bottom: 0 none;
+.landing {
+    display: flex;
+    flex-direction: column;
+
+    .nav nav {
+        padding-bottom: 0;
+        border-bottom: 0 none;
+    }
+
+    .full-height-section {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
 }
