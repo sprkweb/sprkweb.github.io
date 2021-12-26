@@ -21,7 +21,8 @@
 <div class=level-left>
 <ul class=menu>
 <li>
-<a href=/projects/>Проекты</a></li>
+<a href=/projects/>Проекты</a>
+</li>
 <li>
 <a href=#contacts>
 Контакты
@@ -56,15 +57,18 @@
 <h1 class="title title-inline">Snowpack</h1>
 </div>
 </div>
-<div class=list-project-summary>
-<div class=content>
-<div class=project-summary-header>
+</div>
+<div class="projects-list viewport-padding">
+<div class=card>
+<div class="card-header content">
 <a class=tag href=https://www.sprkweb.dev/projects/>Проекты</a>
 <h2><a href=https://www.sprkweb.dev/projects/octava-page/ class="title is-4">Octava Page</a></h2>
 </div>
+<div class="card-main content">
 <p>Octava Page - веб-приложение для новичков-музыкантов,
 помогающее ориентироваться в нотах.</p>
 </div>
+<div class=card-footer>
 <ul class="field is-grouped is-grouped-multiline">
 <li class=control>
 <a class="tag tag--pwa" href=https://www.sprkweb.dev/tags/pwa/>
@@ -87,12 +91,12 @@
 </a>
 </li>
 <li class=control>
-<a class="tag tag--javascript" href=https://www.sprkweb.dev/tags/javascript/>
+<a class="tag tag--snowpack" href=https://www.sprkweb.dev/tags/snowpack/>
 <span class=icon-text>
 <span class=icon>
-<i class="fab fa-js-square"></i>
+<i class="fas fa-mountain"></i>
 </span>
-<span>JavaScript</span>
+<span>Snowpack</span>
 </span>
 </a>
 </li>
@@ -117,12 +121,12 @@
 </a>
 </li>
 <li class=control>
-<a class="tag tag--snowpack" href=https://www.sprkweb.dev/tags/snowpack/>
+<a class="tag tag--javascript" href=https://www.sprkweb.dev/tags/javascript/>
 <span class=icon-text>
 <span class=icon>
-<i class="fas fa-mountain"></i>
+<i class="fab fa-js-square"></i>
 </span>
-<span>Snowpack</span>
+<span>JavaScript</span>
 </span>
 </a>
 </li>
@@ -130,12 +134,13 @@
 <p><a href=https://www.sprkweb.dev/projects/octava-page/ class=see-more-link>Подробнее →</a></p>
 </div>
 </div>
+</div>
 </main>
 <footer class=footer>
 <div class=container>
 <div class=columns>
-<div class="column contacts-list" id=contacts>
-<h2>Контакты</h3>
+<div class="column links-block contacts-list" id=contacts>
+<h2>Контакты</h2>
 <p><a href=https://t.me/saqew target=_blank rel=noreferrer><span class=icon-text>
 <span class=icon>
 <i title=Telegram class="fab fa-telegram"></i>
@@ -159,7 +164,12 @@
 </a></p>
 </div>
 <script>const contactsEl=document.getElementById('contacts'),highlightAnimation=[{outline:'5px solid rgba(255, 255, 255, 0)'},{outline:'5px solid var(--brand-color)',offset:.5},{outline:'5px solid rgba(255, 255, 255, 0)'}];document.querySelectorAll('a[href="#contacts"]').forEach(a=>a.addEventListener('click',()=>contactsEl.animate(highlightAnimation,{duration:1e3,iterations:2,easing:'linear'})))</script>
-<div class=column>
+<div class="column links-block">
+<div class="plain-links block">
+<p>
+<a href=/projects/>Проекты</a>
+</p>
+</div>
 <p class=block>
 <a href=https://github.com/sprkweb/sprkweb.github.io target=_blank rel=noreferrer><span class=icon-text>
 <span>Этот сайт на GitHub</span>
@@ -170,8 +180,12 @@
 </a>
 </p>
 <p class=block>
-<a href=https://creativecommons.org/licenses/by/4.0/ target=_blank rel=noreferrer title="Creative Commons Attribution 4.0 International" class=cc-by>
-<span class="icon is-small"><i class="fab fa-creative-commons"></i></span><span class="icon is-small"><i class="fab fa-creative-commons-by"></i></span>
+<a href=https://creativecommons.org/licenses/by/4.0/ target=_blank rel=noreferrer title="Creative Commons Attribution 4.0 International" class=no-gap-inline><span class="icon is-small">
+<i class="fab fa-creative-commons"></i>
+</span>
+<span class="icon is-small">
+<i class="fab fa-creative-commons-by"></i>
+</span>
 </a>
 </p>
 </div>

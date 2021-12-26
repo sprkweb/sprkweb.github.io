@@ -62,8 +62,8 @@ Contacts
 <footer class=footer>
 <div class=container>
 <div class=columns>
-<div class="column contacts-list" id=contacts>
-<h2>Contacts</h3>
+<div class="column links-block contacts-list" id=contacts>
+<h2>Contacts</h2>
 <p><a href=https://t.me/saqew target=_blank rel=noreferrer><span class=icon-text>
 <span class=icon>
 <i title=Telegram class="fab fa-telegram"></i>
@@ -87,7 +87,9 @@ Contacts
 </a></p>
 </div>
 <script>const contactsEl=document.getElementById('contacts'),highlightAnimation=[{outline:'5px solid rgba(255, 255, 255, 0)'},{outline:'5px solid var(--brand-color)',offset:.5},{outline:'5px solid rgba(255, 255, 255, 0)'}];document.querySelectorAll('a[href="#contacts"]').forEach(a=>a.addEventListener('click',()=>contactsEl.animate(highlightAnimation,{duration:1e3,iterations:2,easing:'linear'})))</script>
-<div class=column>
+<div class="column links-block">
+<div class="plain-links block">
+</div>
 <p class=block>
 <a href=https://github.com/sprkweb/sprkweb.github.io target=_blank rel=noreferrer><span class=icon-text>
 <span>This site on GitHub</span>
@@ -98,8 +100,12 @@ Contacts
 </a>
 </p>
 <p class=block>
-<a href=https://creativecommons.org/licenses/by/4.0/ target=_blank rel=noreferrer title="Creative Commons Attribution 4.0 International" class=cc-by>
-<span class="icon is-small"><i class="fab fa-creative-commons"></i></span><span class="icon is-small"><i class="fab fa-creative-commons-by"></i></span>
+<a href=https://creativecommons.org/licenses/by/4.0/ target=_blank rel=noreferrer title="Creative Commons Attribution 4.0 International" class=no-gap-inline><span class="icon is-small">
+<i class="fab fa-creative-commons"></i>
+</span>
+<span class="icon is-small">
+<i class="fab fa-creative-commons-by"></i>
+</span>
 </a>
 </p>
 </div>
