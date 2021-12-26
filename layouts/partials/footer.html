@@ -1,8 +1,8 @@
-    <div class="container links-block">
+    <div class="container">
         <div class="columns">
 
-            <div class="column contacts-list" id="contacts">
-                <h2>{{ i18n "contacts" }}</h3>
+            <div class="column links-block contacts-list" id="contacts">
+                <h2>{{ i18n "contacts" }}</h2>
                 {{ range .Site.Params.contacts }}
                     <p>{{ partial "icon-text-link.html" . }}</p>
                 {{ end }}
@@ -26,7 +26,17 @@
                 ));
             </script>
 
-            <div class="column">
+
+            <div class="column links-block">
+                <div class="plain-links block">
+                    {{ $currentPage := . }}
+                    {{ range .Site.Menus.main }}
+                        <p>
+                            {{ partial "nav-item" (dict "navPage" . "currentPage" $currentPage) }}
+                        </p>
+                    {{ end }}
+                </div>
+
                 <p class="block">
                     {{ partial "icon-text-link.html" (dict
                         "text" (i18n "this-site-on-github")
