@@ -2,7 +2,7 @@
 title: "Commenti"
 years: "2021-..."
 gh_repo: "https://github.com/sprkweb/commenti"
-tags: [Svelte, TypeScript, JavaScript, GraphQL, Rollup, Docker, Django, Python, PostgreSQL, nginx]
+tags: [Svelte, TypeScript, Docker, Django, GraphQL, PostgreSQL, Rollup, Python, nginx, JavaScript]
 ---
 
 Commenti - система встраиваемых комментариев.

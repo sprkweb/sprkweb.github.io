@@ -34,25 +34,15 @@ main .hero .hero-body {
     display: inline-block;
 }
 
-.list-project-summary {
-    .title {
-        text-decoration: none;
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($body-min-width, auto));
+    justify-content: center;
+    gap: 3em 2em;
+
+    .card {
+        max-width: $desktop;
     }
-
-    h2, .content {
-        margin-bottom: 1rem;
-    }
-
-    .project-summary-header {
-        h2 {
-            margin-top: 0;
-        }
-
-        display: flex;
-        gap: 1em;
-    }
-
-    margin-bottom: 3rem;
 }
 
 a.tag {
