@@ -1,6 +1,7 @@
 ---
 title: "Commenti"
 years: "2021-..."
+icon: "icon.svg"
 gh_repo: "https://github.com/sprkweb/commenti"
 tags: [Svelte, TypeScript, Docker, Django, GraphQL, PostgreSQL, Rollup, Python, nginx, JavaScript]
 ---

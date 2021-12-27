@@ -1,6 +1,7 @@
 ---
 title: "Octava Page"
 years: "2019-..."
+icon: "icon.svg"
 gh_repo: "https://github.com/sprkweb/octava-page"
 link: "https://sprkweb.github.io/octava-page/"
 tags: [PWA, React, Snowpack, SASS, Bootstrap, JavaScript]

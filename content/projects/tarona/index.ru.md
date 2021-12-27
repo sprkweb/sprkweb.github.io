@@ -1,6 +1,7 @@
 ---
 title: "Тарона"
 years: "2015-2017"
+icon: "icon.svg"
 gh_repo: "https://github.com/sprkweb/tarona/"
 tags: [Ruby, JavaScript, SASS, WebSockets, SVG, BDD]
 ---

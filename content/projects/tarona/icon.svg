@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-3.00961894323 -1 32 32">
+	<defs>
+		<path d="M 12.9903810568 7.5 L 0 15 L -12.9903810568 7.5 L -12.9903810568 -7.5 L 0 -15 L 12.9903810568 -7.5 Z" id="hex"></path>
+		<pattern id="grass" patternUnits="userSpaceOnUse" width="30" height="30" x="15" y="15">
+		  <rect fill="#329632" height="30" width="30"></rect>
+		  <g fill="none" stroke="#327D32" stroke-width="1">
+		    <path d="m 20,19.75 c 0,0 -0.125,-6.375 3.5625,-9.5"></path>
+		    <path d="M 25.1875,14.3125 C 21.125,14.625 20,19.8125 20,19.8125
+		          c 0,0 -0.9375,-8.625 -3.6875,-6"></path>
+		    <path d="m 11.0625,12.1875 c 0,0 -0.8125,-7.1250001 3.5,-8.1875001"></path>
+		    <path d="M 5.375,13.875 C 7.5625,14.1875 9.3125,21 9.3125,21
+		          c 0,0 -0.375,-7.9375 3.375,-4.1875"></path>
+		    <path d="m 15.8125,26.75 c 0,0 0.5625,-7 -2.5625,-5.4375"></path>
+		  </g>
+		</pattern>
+	</defs>
+	<use x="12.990381056766578" y="15" xlink:href="#hex" fill="url(#grass)" stroke="url(#grass)" data-type="hex"></use>
+</svg>

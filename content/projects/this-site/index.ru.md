@@ -1,6 +1,7 @@
 ---
 title: "Этот сайт"
 years: "2021-..."
+icon: "icon.svg"
 gh_repo: "https://github.com/sprkweb/sprkweb.github.io"
 tags: [Hugo, SASS, Bulma, "Font Awesome"]
 ---
