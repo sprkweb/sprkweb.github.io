@@ -36,9 +36,12 @@ main .hero .hero-body {
 
 .projects-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax($body-min-width, auto));
     justify-content: center;
     gap: 3em 2em;
+
+    @media (min-width: $tablet) {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, auto));
+    }
 
     .card {
         max-width: $desktop;
