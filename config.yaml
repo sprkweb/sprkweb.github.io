@@ -33,6 +33,11 @@ params:
       text: "sprkweb"
       link: "https://github.com/sprkweb"
       iconClass: "fab fa-github"
+
+    - title: LinkedIn
+      text: "sprkweb"
+      link: "https://www.linkedin.com/in/sprkweb/"
+      iconClass: "fab fa-linkedin-in"
 menu:
   - main
 imaging:
