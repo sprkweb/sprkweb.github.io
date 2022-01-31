@@ -5,7 +5,13 @@
         {{ if eq .Lang $currentLang }}
             <li class="current-lang">{{ .Lang }}</li>
         {{ else }}
-            <li><a href="{{ .Permalink }}">{{ .Lang }}</a></li>
+            <li>
+                <a  href="{{ .Permalink }}" 
+                    onclick="setLang('{{ .Lang }}')"
+                    >
+                    {{ .Lang }}
+                </a>
+            </li>
         {{ end }}
     {{ end }}
 </ul>

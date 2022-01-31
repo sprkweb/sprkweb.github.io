@@ -1,0 +1,11 @@
+<script>
+const curLang = '{{ .Lang }}'
+const availableLangs = [{{ range .AllTranslations }}'{{ .Lang }}',{{ end }}]
+const langLinks = { {{ range .AllTranslations }}'{{ .Lang }}': '{{ .Permalink }}',{{ end }} }
+const preferredLang = window.navigator.language
+const userLang = localStorage.getItem('lang') || preferredLang
+const redirectToLang = (lang) => window.location.replace(langLinks[lang])
+const setLang = (lang) => localStorage.setItem('lang', lang)
+if (curLang !== userLang && availableLangs.includes(userLang))
+    redirectToLang(userLang)
+</script>
