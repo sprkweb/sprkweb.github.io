@@ -27,5 +27,23 @@
             </div>
         </article>
     </div>
+
+    {{ with .GetPage "/projects" }}
+    <div class="section shaded-background">
+        <article id="projects">
+            <div class="container viewport-padding">
+                <div class="hero">
+                    <div class="hero-body">
+                        <h1 class="title">{{.Title}}</h1>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container projects-list viewport-padding">
+                {{ partial "cards-list" . }}
+            </div>
+        </article>
+    </div>
+    {{ end }}
 </main>
 {{ end }}

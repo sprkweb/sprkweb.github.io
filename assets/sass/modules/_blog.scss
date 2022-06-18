@@ -37,7 +37,7 @@ main .hero .hero-body {
 .projects-list {
     display: grid;
     justify-content: center;
-    gap: 3em 2em;
+    gap: 2em;
 
     @media (min-width: $tablet) {
         grid-template-columns: repeat(auto-fit, minmax(25rem, auto));

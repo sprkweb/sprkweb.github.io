@@ -5,10 +5,10 @@
 
     > .main {
         flex: 1 0 auto;
+        padding-bottom: 2rem;
     }
 
     > .footer {
-        margin-top: 2rem;
         flex: 0 0 auto;
     }
 }
@@ -54,4 +54,9 @@ footer {
             text-align: right;
         }
     }
+}
+
+.shaded-background {
+    background: #f0f0f0;
+    padding: 2em;
 }

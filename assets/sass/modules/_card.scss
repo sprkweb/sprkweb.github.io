@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    border: 1px solid silver;
+    background: white;
     padding: 1.5em;
 
     .card-header, .card-main {
@@ -11,9 +11,6 @@
     }
 
     .card-header {
-        margin: -3em -1rem 0 -1rem;
-        padding: 0 1rem;
-        background: white;
         width: fit-content;
 
         display: flex;

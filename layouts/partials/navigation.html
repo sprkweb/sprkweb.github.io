@@ -3,12 +3,16 @@
 
     <div class="level-left">
         <ul class="menu">
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.main }}
-                <li>
-                    {{ partial "nav-item" (dict "navPage" . "currentPage" $currentPage) }}
-                </li>
+            {{ $rootPage := .GetPage "/" }}
+
+            {{ with .GetPage "/projects" }}
+            <li>
+                <a href="{{ $rootPage.RelPermalink }}#projects">
+                    {{- .Title -}}
+                </a>
+            </li>
             {{ end }}
+
             <li>
                 <a href="#contacts">
                     {{ i18n "contacts" }}
@@ -21,12 +25,3 @@
         {{ partial "i18n.html" . }}
     </div>
 </nav>
-
-{{ define "partials/nav-item" }}
-    {{ $is_active := not (.currentPage.IsMenuCurrent "main" .navPage) }}
-    {{- if $is_active -}}
-        <a href="{{ .navPage.URL }}">{{ .navPage.Name }}</a>
-    {{- else -}}
-        {{- .navPage.Name -}}
-    {{- end -}}
-{{ end }}

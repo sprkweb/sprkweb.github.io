@@ -1,0 +1,62 @@
+{{ $curSection := . }}
+{{ range (.Pages.ByParam "years").Reverse }}
+<div class="card">
+    <div class="card-header content">
+        {{/* Unless the page's main section (for example, Post) is the current list (for example, Tag)... */}}
+        {{ with .CurrentSection }}
+            {{ if ne $curSection . }}
+                {{/* ... we'll print its main section where it belongs (e.g. Post) */}}
+                <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ end }}
+        {{ end }}
+
+        {{ if .Params.icon }}
+            <img 
+                src="{{ (.Resources.GetMatch .Params.icon).RelPermalink }}"
+                width="32"
+                height="32"
+                aria-hidden="true"
+                />
+        {{ end }}
+
+        <h2><a href="{{ .Permalink }}" class="title is-4">{{ .Title }}</a></h2>
+    </div>
+
+    <div class="card-main content">
+        {{ .Summary }}
+    </div>
+
+    <div class="card-footer">
+        {{ if .Params.tags }}
+            {{ partial "tags.html" (first 6 (.GetTerms "tags")) }}
+        {{ end }}
+
+        <div class="level">
+            {{ if .Truncated }}
+                <div class="level-left">
+                    <a href="{{ .Permalink }}" class="see-more-link">{{ i18n "see-more" . }} →</a>
+                </div>
+            {{ end }}
+            {{ if or .Params.link .Params.gh_repo }}
+                <div class="level-right links-block">
+                    {{ with .Params.link }}
+                        {{ partial "icon-text-link.html" (dict
+                            "title" (i18n "view-project-link")
+                            "link" .
+                            "iconClass" "fas fa-external-link-alt"
+                        ) }}
+                    {{ end }}
+            
+                    {{ with .Params.gh_repo }}
+                        {{ partial "icon-text-link.html" (dict
+                            "title" (i18n "view-on-github")
+                            "link" .
+                            "iconClass" "fab fa-github-alt"
+                        ) }}
+                    {{ end }}
+                </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

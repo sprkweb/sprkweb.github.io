@@ -3,45 +3,7 @@
     {{ partial "hero.html" . }}
 </div>
 
-{{ $curSection := . }}
-
-<div class="projects-list viewport-padding">
-    {{ range (.Pages.ByParam "years").Reverse }}
-    <div class="card">
-        <div class="card-header content">
-            {{/* Unless the page's main section (for example, Post) is the current list (for example, Tag)... */}}
-            {{ with .CurrentSection }}
-                {{ if ne $curSection . }}
-                    {{/* ... we'll print its main section where it belongs (e.g. Post) */}}
-                    <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
-                {{ end }}
-            {{ end }}
-
-            {{ if .Params.icon }}
-                <img 
-                    src="{{ (.Resources.GetMatch .Params.icon).RelPermalink }}"
-                    width="32"
-                    height="32"
-                    aria-hidden="true"
-                    />
-            {{ end }}
-
-            <h2><a href="{{ .Permalink }}" class="title is-4">{{ .Title }}</a></h2>
-        </div>
-
-        <div class="card-main content">
-            {{ .Summary }}
-        </div>
-
-        <div class="card-footer">
-            {{ if .Params.tags }}
-            {{ partial "tags.html" (first 6 (.GetTerms "tags")) }}
-            {{ end }}
-    
-            <p><a href="{{ .Permalink }}" class="see-more-link">{{ i18n "see-more" . }} →</a></p>
-        </div>
-    </div>
-    {{ end }}
+<div class="projects-list viewport-padding shaded-background">
+    {{ partial "cards-list" . }}
 </div>
-
 {{ end }}
