@@ -6,7 +6,7 @@
 
 {{ define "partials/tag" }}
 <li class="control">
-    <a class="tag tag--{{ .Title | urlize }}" href="{{ .Permalink }}">
+    <a class="tag tag--{{ replace (.Title | urlize) "." "" }}" href="{{ .Permalink }}">
         {{ partial "tag-text" . }}
     </a>
 </li>
