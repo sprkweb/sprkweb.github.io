@@ -31,29 +31,30 @@
             {{ partial "tags.html" (first 6 (.GetTerms "tags")) }}
         {{ end }}
 
-        <div class="level">
-            {{ if .Truncated }}
-                <div class="level-left">
-                    <a href="{{ .Permalink }}" class="see-more-link">{{ i18n "see-more" . }} →</a>
-                </div>
+        <div class="card-footer-links icon-links">
+            {{ with .Params.link }}
+                {{ partial "icon-text-link.html" (dict
+                    "title" (i18n "view-project-link")
+                    "text" (i18n "view-project-link")
+                    "link" .
+                    "iconClass" "fas fa-eye"
+                ) }}
             {{ end }}
-            {{ if or .Params.link .Params.gh_repo }}
-                <div class="level-right links-block">
-                    {{ with .Params.link }}
-                        {{ partial "icon-text-link.html" (dict
-                            "title" (i18n "view-project-link")
-                            "link" .
-                            "iconClass" "fas fa-external-link-alt"
-                        ) }}
-                    {{ end }}
-            
-                    {{ with .Params.gh_repo }}
-                        {{ partial "icon-text-link.html" (dict
-                            "title" (i18n "view-on-github")
-                            "link" .
-                            "iconClass" "fab fa-github-alt"
-                        ) }}
-                    {{ end }}
+            {{ if .Truncated }}
+                {{ partial "icon-text-link.html" (dict
+                    "title" (i18n "see-more")
+                    "text" (i18n "see-more")
+                    "link" .Permalink
+                    "iconClass" "fas fa-angle-double-right"
+                ) }}
+            {{ end }}
+            {{ with .Params.gh_repo }}
+                <div class="card-footer-right">
+                    {{ partial "icon-text-link.html" (dict
+                        "title" (i18n "view-on-github")
+                        "link" .
+                        "iconClass" "fab fa-github-alt"
+                    ) }}
                 </div>
             {{ end }}
         </div>

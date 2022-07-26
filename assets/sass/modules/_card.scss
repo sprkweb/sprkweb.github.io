@@ -28,4 +28,14 @@
     .card-main {
         flex: 1;
     }
+
+    .card-footer-links {
+        display: flex;
+        gap: 1ch 2.5ch;
+        flex-wrap: wrap;
+
+        .card-footer-right {
+            margin-left: auto;
+        }
+    }
 }
