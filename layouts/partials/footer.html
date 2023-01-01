@@ -1,67 +1,47 @@
-    <div class="container">
-        <div class="columns">
+<footer class="footer">
+    <ul id="contacts" class="row-list row-list-gapped">
+        {{ range .Site.Params.contacts }}
+            <li>{{ partial "icon-text-link.html" . }}</li>
+        {{ end }}
+    </ul>
+    <script>
+        const contactsEl = document.getElementById('contacts');
+        const highlightAnimation = [
+            { outline: '5px solid rgba(255, 255, 255, 0)' },
+            { outline: '5px solid var(--outline-color)', offset: 0.5 },
+            { outline: '5px solid rgba(255, 255, 255, 0)' }
+        ];
 
-            <div class="column links-block contacts-list" id="contacts">
-                <h2>{{ i18n "contacts" }}</h2>
-                {{ range .Site.Params.contacts }}
-                    <p>{{ partial "icon-text-link.html" . }}</p>
-                {{ end }}
-            </div>
-            <script>
-                const contactsEl = document.getElementById('contacts');
-                const highlightAnimation = [
-                    { outline: '5px solid rgba(255, 255, 255, 0)' },
-                    { outline: '5px solid var(--brand-color)', offset: 0.5 },
-                    { outline: '5px solid rgba(255, 255, 255, 0)' }
-                ];
+        document.querySelectorAll('a[href="#contacts"]')
+            .forEach((el) => 
+                el.addEventListener('click', () => 
+                    contactsEl.animate(highlightAnimation, {
+                        duration: 1000,
+                        iterations: 2,
+                        easing: 'linear'
+                    })
+            ));
+    </script>
+    
+    <p>
+        {{ partial "icon-text-link.html" (dict
+            "text" (i18n "this-site-on-github")
+            "link" .Site.Params.githubLink
+            "icon" "git"
+            "reverse" true
+        ) }}
+    </p>
 
-                document.querySelectorAll('a[href="#contacts"]')
-                    .forEach((el) => 
-                        el.addEventListener('click', () => 
-                            contactsEl.animate(highlightAnimation, {
-                                duration: 1000,
-                                iterations: 2,
-                                easing: 'linear'
-                            })
-                ));
-            </script>
-
-
-            <div class="column links-block">
-                <div class="plain-links block">
-                    {{ $currentPage := . }}
-                    {{ range .Site.Menus.main }}
-                        <p>
-                            {{ partial "nav-item" (dict "navPage" . "currentPage" $currentPage) }}
-                        </p>
-                    {{ end }}
-                </div>
-
-                <p class="block">
-                    {{ partial "icon-text-link.html" (dict
-                        "text" (i18n "this-site-on-github")
-                        "link" .Site.Params.githubLink
-                        "iconClass" "fab fa-github-alt"
-                        "reverse" true
-                    ) }}
-                </p>
-
-                <p class="block">
-                    <a href="https://creativecommons.org/licenses/by/4.0/" 
-                        target="_blank" rel="noreferrer"
-                        title="Creative Commons Attribution 4.0 International"
-                        class="no-gap-inline">
-                        {{- partial "icon.html" (dict
-                            "iconClass" "fab fa-creative-commons"
-                            "class" "is-small"
-                        ) -}}
-                        {{- partial "icon.html" (dict
-                            "iconClass" "fab fa-creative-commons-by"
-                            "class" "is-small"
-                        ) -}}
-                    </a>
-                </p>
-            </div>
-
-        </div>
-    </div>
+    <p>
+        <a href="https://creativecommons.org/licenses/by/4.0/" 
+        target="_blank" rel="noreferrer"
+        title="Creative Commons Attribution 4.0 International">
+            {{- partial "icon.html" (dict
+                "icon" "creative-commons"
+            ) -}}
+            {{- partial "icon.html" (dict
+                "icon" "creative-commons-by"
+            ) -}}
+        </a>
+    </p>
+</footer>

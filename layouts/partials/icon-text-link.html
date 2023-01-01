@@ -1,3 +1,5 @@
-<a href="{{ .link }}" {{ if not .inner }}target="_blank" rel="noreferrer"{{ end }}>
+<a href="{{ .link }}" 
+    class="icon-link"
+    {{ if not .inner }}target="_blank" rel="noreferrer"{{ end }}>
     {{- partial "icon-text.html" . -}}
 </a>

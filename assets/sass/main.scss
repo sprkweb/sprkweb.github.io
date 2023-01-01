@@ -1,69 +1,76 @@
 @charset "utf-8";
 
+$page-width: 70ch;
+$viewport-padding: 1.5rem;
 
-$brand-color: #ec0000;
-:root {
-    // Oh yeah, big brain time
-    // (CSS variable is neeeded for JS animation, 
-    //  which can't include SASS variable)
-    --brand-color: #{$brand-color};
+$text-color: hsl(0%, 0%, 15%);
+$subtle-color: rgb(190, 190, 190);
+$link-color: rgb(0, 0, 145);
+
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+html, body {
+    height: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-$family-headline: 'Trebuchet MS', 'Open Sans', sans-serif;
-$family-text: 'Open Sans', Georgia, Cambria, "Times New Roman", Times, serif;
-$family-details: 'Open Sans', 'Trebuchet MS', sans-serif;
+body {
+    font-family: $font-family;
+    font-size: 1.25em;
+    line-height: 1.5;
+    color: $text-color;
 
-@mixin font-headline {
-    font-family: $family-headline;
-}
-@mixin font-text {
-    font-family: $family-text;
-}
-@mixin font-details {
-    font-family: $family-details;
+    margin: 0;
+    padding: 0;
 }
 
-$body-family: $family-text;
-$body-weight: 300;
-$body-size: 16px;
+.content {
+    ul {
+        margin-left: 0;
+        padding-left: 0;
+        text-indent: 0.5em;
 
-$link: $brand-color;
+        li {
+            list-style: '– ' inside;
+        }
+    }
 
-$title-size: 2rem;
-$subtitle-size: 1.5rem;
+}
 
-$widescreen-enabled: false;
-$fullhd-enabled: false;
+figcaption {
+    text-align: center;
+}
 
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+pre {
+    padding: 1em;
+    overflow-x: auto;
+}
 
-@import "../../node_modules/bulma/sass/utilities/_all.sass";
-@import "../../node_modules/bulma/sass/base/_all.sass"; 
-@import "../../node_modules/bulma/sass/layout/hero.sass";
-@import "../../node_modules/bulma/sass/layout/footer.sass";
-@import "../../node_modules/bulma/sass/grid/columns.sass";
-@import "../../node_modules/bulma/sass/elements/other.sass";
-@import "../../node_modules/bulma/sass/elements/content.sass";
-@import "../../node_modules/bulma/sass/elements/title.sass";
-@import "../../node_modules/bulma/sass/elements/icon.sass";
-@import "../../node_modules/bulma/sass/elements/tag.sass";
-@import "../../node_modules/bulma/sass/form/shared.sass";
-@import "../../node_modules/bulma/sass/form/tools.sass";
-@import "../../node_modules/bulma/sass/components/breadcrumb.sass";
-@import "../../node_modules/bulma/sass/components/level.sass";
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
-@import "base";
-@import "utils";
-@import "layout/common";
-@import "layout/normal";
-@import "layout/landing";
-@import "modules/header";
-@import "modules/footer";
-@import "modules/business-card";
-@import "modules/card";
-@import "modules/blog";
-@import "modules/content";
-@import "modules/links-block";
-@import "modules/tags";
+th, td {
+    padding: 0.25em;
+    border: 1px solid $subtle-color;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: $link-color;
+}
+
+@import "layout";
+@import "components/nav";
+@import "components/breadcrumbs";
+@import "components/button";
+@import "components/icon";
+@import "components/footer";
+@import "components/business-card";
+@import "components/post";

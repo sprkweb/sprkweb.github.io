@@ -15,27 +15,19 @@
 </head>
 
 <body>
-    <div class="page">
+    <div class="content-centered">
+        {{ partial "navigation.html" . }}
+
         {{ block "main" . }}
-        <div class="nav">
-            <div class="container">
-                {{ partial "navigation.html" . }}
-            </div>
-        </div>
-        
-        <main class="main">
-            <div class="container viewport-padding">
-                {{ partial "breadcrumbs.html" . }}
-            </div>
+        <main>
+            {{ partial "breadcrumbs.html" . }}
 
             {{ block "content" . }}
             {{ end }}
         </main>
         {{ end }}
         
-        <footer class="footer">
-            {{ partialCached "footer.html" . }}
-        </footer>
+        {{ partialCached "footer.html" . }}
     </div>
 </body>
 

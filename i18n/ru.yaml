@@ -1,12 +1,12 @@
 this-site-on-github:
   other: Этот сайт на GitHub
-view-on-github:
-  other: Посмотреть на GitHub
-view-project-link:
-  other: Посмотреть
 contacts:
   other: "Контакты"
 see-more:
-  other: Узнать больше
-lastmod:
-  other: Дата последнего обновления страницы
+  other: Узнать больше →
+tags:
+  other: Теги
+publish-date:
+  other: Опубликовано
+lastmod-date:
+  other: обновлено

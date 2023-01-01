@@ -1,0 +1,22 @@
+$icon-size: 1em;
+
+.icon-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75ch;
+}
+
+.icon {
+    display: inline-block;
+    //width: $icon-size;
+    height: $icon-size;
+
+    svg {
+        height: $icon-size;
+        fill: $text-color;
+    }
+}
+
+a .icon svg {
+    fill: $link-color;
+}

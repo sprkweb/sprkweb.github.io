@@ -1,5 +1,5 @@
 <span class="icon-text">
     {{ if not .reverse }}{{ partial "icon.html" . }}{{ end }}
-    <span>{{ .text }}</span>
+    <span class="icon-text-label">{{ .text }}</span>
     {{ if .reverse }}{{ partial "icon.html" . }}{{ end }}
 </span>

@@ -1,0 +1,22 @@
+{{ range (.Pages.ByParam "years").Reverse }}
+<div class="post">
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+
+    <div>
+        {{ .Summary }}
+    </div>
+
+    {{ if .Params.tags }}
+    <p>
+        {{ i18n "tags" }}: 
+        {{ partial "tags.html" (first 6 (.GetTerms "tags")) }}
+    </p>
+    {{ end }}
+
+    {{ if .Truncated }}
+        <a href="{{ .Permalink }}">
+            {{ i18n "see-more" }}
+        </a>
+    {{ end }}
+</div>
+{{ end }}

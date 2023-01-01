@@ -1,0 +1,16 @@
+.content-centered {    
+    display: grid;
+    grid-template-columns: 
+        [viewport-start] minmax($viewport-padding, 1fr)
+        [content-start] minmax(0, $page-width) [content-end]
+        minmax($viewport-padding, 1fr) [viewport-end];
+
+    & > * {
+        grid-column: content;
+    }
+
+    & > .full-width {
+        grid-column: viewport;
+    }
+}
+

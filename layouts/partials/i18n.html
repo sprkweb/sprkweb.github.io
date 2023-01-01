@@ -1,9 +1,9 @@
 {{ if .IsTranslated }}
-<ul class="lang-list">
+<ul class="lang-list row-list button">
     {{ $currentLang := .Lang }}
     {{ range .AllTranslations }}
         {{ if eq .Lang $currentLang }}
-            <li class="current-lang">{{ .Lang }}</li>
+            <li class="active">{{ .Lang }}</li>
         {{ else }}
             <li>
                 <a  href="{{ .Permalink }}" 
