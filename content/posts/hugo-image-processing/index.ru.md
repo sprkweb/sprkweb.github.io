@@ -1,5 +1,6 @@
 ---
 title: "Обработка изображений в Hugo"
+date: 2021-06-22
 tags: [Hugo]
 ---
 
@@ -89,7 +90,7 @@ imaging:
 
 ## Результат
 
-На странице [Octava Page]({{< relref "octava-page" >}})
+На [тестовой странице](https://github.com/sprkweb/sprkweb.github.io/tree/7d40f7fa121bc34024a9562e6d52d8ac5f9ca0e9/content/projects/octava-page)
 _без масштабирования_ изображений размер изменился следующим образом:
 
 Исходный формат | JPEG      | PNG

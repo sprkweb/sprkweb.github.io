@@ -4,7 +4,9 @@ contacts:
   other: "Contacts"
 see-more:
   other: Read more →
-lastmod:
-  other: Last page update
 tags:
   other: Tags
+publish-date:
+  other: Published
+lastmod-date:
+  other: updated

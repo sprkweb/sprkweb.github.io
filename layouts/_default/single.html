@@ -3,10 +3,5 @@
     {{ partial "title.html" . }}
     
     {{.Content}}
-
-    <p>
-        {{ i18n "lastmod" }}: 
-        {{ .Lastmod.Year }}.{{ printf "%0.2d" .Lastmod.Month }}.{{ .Lastmod.Day }}
-    </p>
 </div>
 {{ end }}

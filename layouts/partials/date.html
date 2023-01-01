@@ -1,0 +1,14 @@
+{{ $format := "2006.01.02" }}
+{{ $publishDate := .Params.date.Format $format }}
+{{ $updateDate := .Lastmod.Format $format }}
+
+<p>
+    {{ i18n "publish-date" }}
+    {{ $publishDate }}
+
+    {{- if ne $publishDate $updateDate -}}
+        , {{ i18n "lastmod-date" }}
+        {{ $updateDate }}
+    {{- end -}}
+</p>
+

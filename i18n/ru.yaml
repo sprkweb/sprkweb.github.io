@@ -4,7 +4,9 @@ contacts:
   other: "Контакты"
 see-more:
   other: Узнать больше →
-lastmod:
-  other: Дата последнего обновления страницы
 tags:
   other: Теги
+publish-date:
+  other: Опубликовано
+lastmod-date:
+  other: обновлено
