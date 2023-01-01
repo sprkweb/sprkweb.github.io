@@ -1,49 +1,23 @@
 {{ define "main" }}
-<main class="landing">
-    <div class="full-height-section">
-        <div class="nav viewport-padding">
-            {{ partial "navigation.html" . }}
-        </div>
-        
-        <article class="business-card">
-            <div class="name">
-                <h1 class="title">{{.Title}}</h1>
-        
-                {{ with .Params.subtitle }}
-                <h2 class="subtitle">{{.}}</h2>
-                {{ end }}
-            </div>
-
-            {{ with .Resources.GetMatch .Params.namebanner }}
-                <div class="name-banner" aria-hidden="true">
-                    {{ .Content | safeHTML }}
-                </div>
-            {{ end }}
+<main>
+    <article class="business-card">
+        <div class="name">
+            <h1 class="title">{{.Title}}</h1>
     
-            <div class="main-points">
-                <div class="content">
-                    {{.Content}}
-                </div>
-            </div>
-        </article>
-    </div>
+            {{ with .Params.subtitle }}
+            <h2 class="subtitle">{{.}}</h2>
+            {{ end }}
+        </div>
 
-    {{ with .GetPage "/projects" }}
-    <div class="section shaded-background">
-        <article id="projects">
-            <div class="container viewport-padding">
-                <div class="hero">
-                    <div class="hero-body">
-                        <h1 class="title">{{.Title}}</h1>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="container projects-list viewport-padding">
-                {{ partial "cards-list" . }}
-            </div>
-        </article>
-    </div>
+        <div class="content">
+            {{.Content}}
+        </div>
+    </article>
+
+    {{ with .GetPage "/posts" }}
+        <div class="content">
+            {{ partial "list" . }}
+        </div>
     {{ end }}
 </main>
 {{ end }}

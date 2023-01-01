@@ -1,43 +1,12 @@
 {{ define "content" }}
-
-<div class="container viewport-padding">
-    {{ partial "hero.html" . }}
-</div>
-
-{{ if or .Params.link .Params.gh_repo }}
-<div class="content info-block links-block">
-    <div class="container viewport-padding">
-        {{ with .Params.link }}
-        <p>
-            {{ partial "icon-text-link.html" (dict
-                "text" (i18n "view-project-link")
-                "link" .
-                "iconClass" "fas fa-eye"
-            ) }}
-        </p>
-        {{ end }}
-
-        {{ with .Params.gh_repo }}
-        <p>
-            {{ partial "icon-text-link.html" (dict
-                "text" (i18n "view-on-github")
-                "link" .
-                "iconClass" "fab fa-github-alt"
-            ) }}
-        </p>
-        {{ end }}
-    </div>
-</div>
-{{ end }}
-
-<div class="content content-centered">
-    {{.Content}}
-</div>
+<div class="content">
+    {{ partial "title.html" . }}
     
-<div class="container viewport-padding">
-    <div class="content postscript">
+    {{.Content}}
+
+    <p>
         {{ i18n "lastmod" }}: 
         {{ .Lastmod.Year }}.{{ printf "%0.2d" .Lastmod.Month }}.{{ .Lastmod.Day }}
-    </div>
+    </p>
 </div>
 {{ end }}

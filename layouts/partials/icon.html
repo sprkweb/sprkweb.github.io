@@ -1,4 +1,5 @@
-<span  class="icon{{ with .class }} {{ . }}{{ end }}">
-    <i {{ with .title }}title="{{ . }}"{{ end }}
-        class="{{ .iconClass }}"></i>
+<span class="icon{{ with .class }} {{ . }}{{ end }}" 
+    {{ with .title }}title="{{ . }}"{{ end }}>
+    {{- partial "svg" .icon -}}
 </span>
+{{- /* This deletes the spaces in the end */ -}}

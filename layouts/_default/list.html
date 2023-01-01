@@ -1,9 +1,6 @@
 {{ define "content" }}
-<div class="container viewport-padding">
-    {{ partial "hero.html" . }}
-</div>
-
-<div class="projects-list viewport-padding shaded-background">
-    {{ partial "cards-list" . }}
+<div class="content">
+    {{ partial "title" . }}
+    {{ partial "list" . }}
 </div>
 {{ end }}

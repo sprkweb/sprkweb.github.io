@@ -1,12 +1,10 @@
 this-site-on-github:
   other: This site on GitHub
-view-on-github:
-  other: View on GitHub
-view-project-link:
-  other: View
 contacts:
   other: "Contacts"
 see-more:
-  other: Read more
+  other: Read more →
 lastmod:
   other: Last page update
+tags:
+  other: Tags

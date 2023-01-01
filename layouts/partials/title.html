@@ -1,0 +1,10 @@
+<h1>{{.Title}}</h1>
+
+{{ if .Params.tags }}
+<div>
+    {{ i18n "tags" }}: 
+    {{ partial "tags.html" (.GetTerms "tags") }}
+</div>
+{{ end }}
+
+{{ with .Description }}<p>{{ . }}</p>{{ end }}

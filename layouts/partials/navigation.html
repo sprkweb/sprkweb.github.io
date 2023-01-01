@@ -1,27 +1,28 @@
-<nav class="level is-mobile" 
-    role="navigation" aria-label="main navigation">
+<nav class="nav" role="navigation" aria-label="main navigation">
+    <ul class="row-list row-list-gapped">
+        {{ $currentPage := . }}
 
-    <div class="level-left">
-        <ul class="menu">
-            {{ $rootPage := .GetPage "/" }}
-
-            {{ with .GetPage "/projects" }}
+        {{ range .Site.Menus.main }}
+            {{ $active := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
             <li>
-                <a href="{{ $rootPage.RelPermalink }}#projects">
-                    {{- .Title -}}
-                </a>
+                {{ if $active }}
+                    {{ .Name }}
+                {{ else }}
+                    <a href="{{ .URL }}" title="{{ .Title }}">
+                        {{ .Name }}
+                    </a>
+                {{ end }}
             </li>
-            {{ end }}
+        {{ end }}
 
-            <li>
-                <a href="#contacts">
-                    {{ i18n "contacts" }}
-                </a>
-            </li>
-        </ul>
-    </div>
+        <li>
+            <a href="#contacts">
+                {{ i18n "contacts" }}
+            </a>
+        </li>
+    </ul>
 
-    <div class="level-right">
+    <div class="nav-right">
         {{ partial "i18n.html" . }}
     </div>
 </nav>

@@ -2,7 +2,7 @@ baseURL: "https://www.sprkweb.dev/"
 defaultContentLanguage: ru
 staticDir:
   - static
-  - node_modules/@fortawesome/fontawesome-free
+sectionPagesMenu: main
 taxonomies:
   tag: tags
 markup:
@@ -12,32 +12,32 @@ markup:
 languages:
   ru:
     title: Вадим Сапрыкин
-    description: "Вадим Сапрыкин - веб-разработчик, заинтересованный в изучении почти всего, пишет свои мысли о разных технологиях, идеях и своих проектах."
+    description: "Вадим Сапрыкин - бэкенд Golang разработчик, заинтересованный в изучении почти всего, пишет свои мысли о разных технологиях, идеях и своих проектах."
   en:
     title: Vadim Saprykin
-    description: "Vadim Saprykin is a web developer interested in almost anything."
+    description: "Vadim Saprykin is a backend Golang developer interested in almost anything."
 params:
   githubLink: "https://github.com/sprkweb/sprkweb.github.io"
   contacts:
     - title: Telegram
       text: "@saqew"
       link: "https://t.me/saqew"
-      iconClass: "fab fa-telegram"
+      icon: "telegram"
 
     - title: Email
       text: "sprkweb@ya.ru"
       link: "mailto:sprkweb@ya.ru"
-      iconClass: "fas fa-envelope"
+      icon: "mail"
 
     - title: GitHub
       text: "sprkweb"
       link: "https://github.com/sprkweb"
-      iconClass: "fab fa-github"
+      icon: "github"
 
     - title: LinkedIn
       text: "sprkweb"
       link: "https://www.linkedin.com/in/sprkweb/"
-      iconClass: "fab fa-linkedin-in"
+      icon: "linkedin"
 menu:
   - main
 imaging:

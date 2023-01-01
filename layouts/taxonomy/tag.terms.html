@@ -1,11 +1,11 @@
 {{ define "content" }}
-<div class="container viewport-padding">
-    {{ partial "hero.html" . }}
-
-    <ul class="field is-grouped is-grouped-multiline">
-    {{ range .Data.Terms.ByCount }}
-        {{ partial "tag" .Page }}
-    {{ end }}
+<div>
+    {{ partial "title.html" . }}
+    
+    <ul class="row-list row-list-gapped">
+        {{ range .Data.Terms.ByCount }}
+            {{ partial "tag" .Page }}
+        {{ end }}
     </ul>
 </div>
 {{ end }}
