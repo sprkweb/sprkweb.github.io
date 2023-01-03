@@ -38,10 +38,6 @@ body {
 
 }
 
-figcaption {
-    text-align: center;
-}
-
 pre {
     padding: 1em;
     overflow-x: auto;
@@ -55,6 +51,10 @@ table {
 th, td {
     padding: 0.25em;
     border: 1px solid $subtle-color;
+}
+
+figure {
+    text-align: center;
 }
 
 img {
