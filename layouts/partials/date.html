@@ -2,13 +2,10 @@
 {{ $publishDate := .Params.date.Format $format }}
 {{ $updateDate := .Lastmod.Format $format }}
 
-<p>
-    {{ i18n "publish-date" }}
-    {{ $publishDate }}
+{{ $publishDate }}
 
-    {{- if ne $publishDate $updateDate -}}
-        , {{ i18n "lastmod-date" }}
-        {{ $updateDate }}
-    {{- end -}}
-</p>
+{{- if ne $publishDate $updateDate -}}
+    , {{ i18n "lastmod-date" }}
+    {{ $updateDate }}
+{{- end -}}
 

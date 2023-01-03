@@ -1,0 +1,16 @@
+{{ if or .Params.date .Params.tags }}
+<p>
+    {{ if .Params.date }}
+        {{ partial "date.html" . }}
+    {{- end -}}
+
+    {{- if and .Params.date .Params.tags -}}
+    .
+    {{ end }}
+
+    {{ if .Params.tags }}
+        {{ i18n "tags" }}: 
+        {{ partial "tags.html" (.GetTerms "tags") }}
+    {{ end }}
+</p>
+{{ end }}

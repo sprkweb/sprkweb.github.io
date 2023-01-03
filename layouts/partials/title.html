@@ -1,14 +1,5 @@
 <h1>{{.Title}}</h1>
 
-{{ if .Params.date }}
-    {{ partial "date.html" . }}
-{{ end }}
-
-{{ if .Params.tags }}
-<p>
-    {{ i18n "tags" }}: 
-    {{ partial "tags.html" (.GetTerms "tags") }}
-</p>
-{{ end }}
+{{ partial "post-info.html" . }}
 
 {{ with .Description }}<p>{{ . }}</p>{{ end }}
