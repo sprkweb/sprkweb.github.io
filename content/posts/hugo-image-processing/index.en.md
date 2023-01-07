@@ -1,6 +1,7 @@
 ---
 title: "Image processing in Hugo"
 date: 2021-06-22
+lastmod: 2023-01-03
 tags: [Hugo]
 ---
 

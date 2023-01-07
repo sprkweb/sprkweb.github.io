@@ -1,6 +1,7 @@
 ---
 title: "Must-read books about code quality"
-date: 2023-01-02
+date: 2023-01-03
+lastmod: 2023-01-03
 tags: []
 ---
 
