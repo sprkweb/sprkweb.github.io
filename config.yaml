@@ -9,6 +9,8 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  tableOfContents:
+    ordered: true
 languages:
   ru:
     title: Вадим Сапрыкин
