@@ -26,16 +26,9 @@ body {
 }
 
 .content {
-    ul {
-        margin-left: 0;
-        padding-left: 0;
-        text-indent: 0.5em;
-
-        li {
-            list-style: '– ' inside;
-        }
+    ul li {
+        list-style: '– ';
     }
-
 }
 
 pre {

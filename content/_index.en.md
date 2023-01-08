@@ -6,3 +6,12 @@ subtitle: "Golang Backend Developer"
 - Loves and has knowledge in __development__;
 - Is interested in mostly everything else in IT;
 - Will be glad when you [write](#contacts) to him.
+
+<br><br>
+
+You might like to:
+
+- Read my [posts]({{< ref "/posts" >}})
+- Check out my interactive articles: 
+    - [Pareto Principle](https://sprkweb.dev/pareto-page/)
+    - [I Know A Lot About You](https://iknowalotaboutyou.netlify.app)
