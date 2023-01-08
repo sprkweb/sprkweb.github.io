@@ -8,18 +8,12 @@
                 {{ if $active }}
                     {{ .Name }}
                 {{ else }}
-                    <a href="{{ .URL }}" title="{{ .Title }}">
-                        {{ .Name }}
+                    <a href="{{ .URL }}">
+                        {{- .Name -}}
                     </a>
                 {{ end }}
             </li>
         {{ end }}
-
-        <li>
-            <a href="#contacts">
-                {{ i18n "contacts" }}
-            </a>
-        </li>
     </ul>
 
     <div class="nav-right">
