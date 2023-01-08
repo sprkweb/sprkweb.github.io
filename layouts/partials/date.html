@@ -1,5 +1,5 @@
 {{ $format := "2006.01.02" }}
-{{ $publishDate := .Params.date.Format $format }}
+{{ $publishDate := .Date.Format $format }}
 {{ $updateDate := .Lastmod.Format $format }}
 
 {{ $publishDate }}
