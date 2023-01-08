@@ -1,6 +1,6 @@
-{{ if or .Date .Params.tags }}
+{{ if or .Params.date .Params.tags }}
 <p>
-    {{ if .Date }}
+    {{ if .Params.date }}
         {{ partial "date.html" . }}
     {{- end -}}
 
