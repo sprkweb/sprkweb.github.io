@@ -9,7 +9,7 @@
 
     <title>{{ block "title" . }}{{ .Title }}{{ end }}</title>
 
-    {{ partialCached "lang-redirect.html" . }}
+    {{ partial "lang-redirect.html" . }}
     {{ partial "style-headers.html" . }}
     {{ partial "big-brother.html" . }}
 </head>
