@@ -9,6 +9,8 @@ subtitle: "Golang Backend Developer"
 
 <br><br>
 
+I'm currently working at [Kaspersky](https://www.kaspersky.com/).
+
 You might like to:
 
 - Read my [posts]({{< ref "/posts" >}})
