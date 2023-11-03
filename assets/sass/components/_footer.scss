@@ -3,6 +3,6 @@
 }
 
 #contacts {
-    --outline-color: #{$link-color};
+    --outline-color: #{var(--link-color)};
     outline-offset: 0.25em;
 }

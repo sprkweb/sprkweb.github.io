@@ -8,15 +8,14 @@ $icon-size: 1em;
 
 .icon {
     display: inline-block;
-    //width: $icon-size;
     height: $icon-size;
 
     svg {
         height: $icon-size;
-        fill: $text-color;
+        fill: var(--text-color);
     }
 }
 
 a .icon svg {
-    fill: $link-color;
+    fill: var(--link-color);
 }
