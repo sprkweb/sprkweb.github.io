@@ -9,7 +9,7 @@ The [image processing system](https://gohugo.io/content-management/image-process
 in Hugo was an interesting discovery and I really liked it: it's quite powerful 
 and functional, but it also has a simple interface that allows you to 
 customize it with a few lines of code. It also supports 
-[WebP]((https://developers.google.com/speed/webp/)), 
+[WebP](https://developers.google.com/speed/webp/), 
 an image format that I also really like.
 <!--more-->
 
