@@ -11,7 +11,7 @@ Tags:
 in Hugo was an interesting discovery and I really liked it: it&rsquo;s quite powerful
 and functional, but it also has a simple interface that allows you to
 customize it with a few lines of code. It also supports
-<a href=%28https://developers.google.com/speed/webp/%29>WebP</a>,
+<a href=https://developers.google.com/speed/webp/ target=_blank rel=noreferrer>WebP</a>,
 an image format that I also really like.</p><p>I made the following shortcode for inserting images:</p><p><a href=https://github.com/sprkweb/sprkweb.github.io/blob/30b0c2f9f491b776cddc35f6b2afd139cb7a2790/layouts/shortcodes/img.html target=_blank rel=noreferrer>layouts/shortcodes/img.html</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>{{ $original := $.Page.Resources.GetMatch (.Get 0) }}
 </span></span><span style=display:flex><span>{{ $optimized := $original.Fit &#34;896x3072 webp&#34; }}
 </span></span><span style=display:flex><span>

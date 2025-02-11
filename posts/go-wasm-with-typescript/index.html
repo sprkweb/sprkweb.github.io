@@ -5,22 +5,22 @@
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#f92672>import</span> <span style=color:#e6db74>&#34;syscall/js&#34;</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>myFunc</span>(<span style=color:#a6e22e>this</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>, <span style=color:#a6e22e>args</span> []<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>) <span style=color:#a6e22e>any</span> {
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>myFunc</span>(<span style=color:#a6e22e>this</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>, <span style=color:#a6e22e>args</span> []<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>) <span style=color:#66d9ef>any</span> {
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;hello&#34;</span>
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>main</span>() {
-</span></span><span style=display:flex><span>    <span style=color:#75715e>// создаём в JavaScript глобальную переменную MyFunc
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// и присваиваем ей функцию
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Global</span>().<span style=color:#a6e22e>Set</span>(<span style=color:#e6db74>&#34;MyFunc&#34;</span>, <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>FuncOf</span>(<span style=color:#a6e22e>myFunc</span>))
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// создаём в JavaScript глобальную переменную MyFunc</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// и присваиваем ей функцию</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Global</span>().<span style=color:#a6e22e>Set</span>(<span style=color:#e6db74>&#34;MyFunc&#34;</span>, <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>FuncOf</span>(<span style=color:#a6e22e>myFunc</span>))
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#75715e>// ждём бесконечно, чтобы Go не завершил выполнение и 
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// функция были доступна
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	<span style=color:#f92672>&lt;-</span>make(<span style=color:#66d9ef>chan</span> <span style=color:#66d9ef>struct</span>{}) 
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ждём бесконечно, чтобы Go не завершил выполнение и </span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// функция были доступна</span>
+</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;-</span>make(<span style=color:#66d9ef>chan</span> <span style=color:#66d9ef>struct</span>{}) 
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p><a href=https://pkg.go.dev/syscall/js target=_blank rel=noreferrer><code>syscall/js</code></a> &ndash; пакет из стандартной библиотеки Go. Компилятор Go и среда разработки могут ругаться, что они его не знают. Чтобы этого избежать, в начало <code>main.go</code> нужно добавить директиву о том, что файл должен компилироваться только в WebAssembly:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#75715e>//go:build wasm
-</span></span></span><span style=display:flex><span><span style=color:#75715e>// +build wasm
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
+</span></span></code></pre></div><p><a href=https://pkg.go.dev/syscall/js target=_blank rel=noreferrer><code>syscall/js</code></a> &ndash; пакет из стандартной библиотеки Go. Компилятор Go и среда разработки могут ругаться, что они его не знают. Чтобы этого избежать, в начало <code>main.go</code> нужно добавить директиву о том, что файл должен компилироваться только в WebAssembly:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#75715e>//go:build wasm</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// +build wasm</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#f92672>import</span> (
 </span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;syscall/js&#34;</span>
@@ -79,43 +79,43 @@
 </span></span><span style=display:flex><span>        }, <span style=color:#ae81ff>10</span>)
 </span></span><span style=display:flex><span>    })
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h2 id=как-создать-javascript-класс-через-webassembly>Как создать JavaScript класс через WebAssembly</h2><p>В JavaScript класс &ndash; это функция, которая создаёт объект. Чтобы создать такой класс из Go, нужно создать функции для его конструктора и методов. В каждой функции нужно конвертировать типы: в начале &ndash; из типа <code>js.Value</code> в нужный нам, в конце &ndash; обратно.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#75715e>// Обёртка вокруг объекта myObj
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>wrapper</span> <span style=color:#66d9ef>struct</span> {
+</span></span></code></pre></div><h2 id=как-создать-javascript-класс-через-webassembly>Как создать JavaScript класс через WebAssembly</h2><p>В JavaScript класс &ndash; это функция, которая создаёт объект. Чтобы создать такой класс из Go, нужно создать функции для его конструктора и методов. В каждой функции нужно конвертировать типы: в начале &ndash; из типа <code>js.Value</code> в нужный нам, в конце &ndash; обратно.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#75715e>// Обёртка вокруг объекта myObj</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>wrapper</span> <span style=color:#66d9ef>struct</span> {
 </span></span><span style=display:flex><span>	<span style=color:#a6e22e>obj</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>mypkg</span>.<span style=color:#a6e22e>myObj</span>
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>// Конструктор JavaScript объекта
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>NewObj</span>(<span style=color:#a6e22e>this</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>, <span style=color:#a6e22e>args</span> []<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>) <span style=color:#a6e22e>any</span> {
-</span></span><span style=display:flex><span>	<span style=color:#75715e>// Конвертируем аргументы из типа js.Value в нужные нам
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	<span style=color:#a6e22e>name</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>args</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>String</span>()
+</span></span><span style=display:flex><span><span style=color:#75715e>// Конструктор JavaScript объекта</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>NewObj</span>(<span style=color:#a6e22e>this</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>, <span style=color:#a6e22e>args</span> []<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>) <span style=color:#66d9ef>any</span> {
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// Конвертируем аргументы из типа js.Value в нужные нам</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>name</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>args</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>String</span>()
 </span></span><span style=display:flex><span>	<span style=color:#a6e22e>number</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>args</span>[<span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>Int</span>()
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>	<span style=color:#75715e>// Создаём объект
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	<span style=color:#a6e22e>wrap</span> <span style=color:#f92672>:=</span> <span style=color:#f92672>&amp;</span><span style=color:#a6e22e>wrapper</span>{
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// Создаём объект</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>wrap</span> <span style=color:#f92672>:=</span> <span style=color:#f92672>&amp;</span><span style=color:#a6e22e>wrapper</span>{
 </span></span><span style=display:flex><span>		<span style=color:#a6e22e>obj</span>: <span style=color:#a6e22e>mypkg</span>.<span style=color:#a6e22e>NewObj</span>(<span style=color:#a6e22e>name</span>, <span style=color:#a6e22e>number</span>)
 </span></span><span style=display:flex><span>	}
 </span></span><span style=display:flex><span>	
-</span></span><span style=display:flex><span>	<span style=color:#75715e>// Конвертируем наш объект wrapper в
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	<span style=color:#75715e>// JavaScript объект, содержащий два метода
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	<span style=color:#66d9ef>return</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>ValueOf</span>(<span style=color:#66d9ef>map</span>[<span style=color:#66d9ef>string</span>]<span style=color:#a6e22e>any</span>{
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// Конвертируем наш объект wrapper в</span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// JavaScript объект, содержащий два метода</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>ValueOf</span>(<span style=color:#66d9ef>map</span>[<span style=color:#66d9ef>string</span>]<span style=color:#66d9ef>any</span>{
 </span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;set&#34;</span>: <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>FuncOf</span>(<span style=color:#a6e22e>wrap</span>.<span style=color:#a6e22e>Set</span>),
 </span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;get&#34;</span>: <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>FuncOf</span>(<span style=color:#a6e22e>wrap</span>.<span style=color:#a6e22e>Get</span>),
 </span></span><span style=display:flex><span>	})
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>// Метод объекта
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>w</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>wrapper</span>) <span style=color:#a6e22e>Set</span>(<span style=color:#a6e22e>this</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>, <span style=color:#a6e22e>args</span> []<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>) <span style=color:#a6e22e>any</span> {
+</span></span><span style=display:flex><span><span style=color:#75715e>// Метод объекта</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>w</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>wrapper</span>) <span style=color:#a6e22e>Set</span>(<span style=color:#a6e22e>this</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>, <span style=color:#a6e22e>args</span> []<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>) <span style=color:#66d9ef>any</span> {
 </span></span><span style=display:flex><span>	<span style=color:#a6e22e>name</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>args</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>String</span>()
 </span></span><span style=display:flex><span>	<span style=color:#a6e22e>number</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>args</span>[<span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>Int</span>()
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#a6e22e>res</span>, <span style=color:#a6e22e>err</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>w</span>.<span style=color:#a6e22e>obj</span>.<span style=color:#a6e22e>Set</span>(<span style=color:#a6e22e>name</span>, <span style=color:#a6e22e>number</span>)
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>ValueOf</span>(<span style=color:#66d9ef>map</span>[<span style=color:#66d9ef>string</span>]<span style=color:#a6e22e>any</span>{
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>ValueOf</span>(<span style=color:#66d9ef>map</span>[<span style=color:#66d9ef>string</span>]<span style=color:#66d9ef>any</span>{
 </span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;error&#34;</span>:  <span style=color:#a6e22e>err</span>.<span style=color:#a6e22e>Error</span>(),
 </span></span><span style=display:flex><span>        })
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>ValueOf</span>(<span style=color:#66d9ef>map</span>[<span style=color:#66d9ef>string</span>]<span style=color:#a6e22e>any</span>{
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>ValueOf</span>(<span style=color:#66d9ef>map</span>[<span style=color:#66d9ef>string</span>]<span style=color:#66d9ef>any</span>{
 </span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;result&#34;</span>: <span style=color:#a6e22e>res</span>,
 </span></span><span style=display:flex><span>	})
 </span></span><span style=display:flex><span>}

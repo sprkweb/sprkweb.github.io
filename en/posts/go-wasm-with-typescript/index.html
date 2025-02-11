@@ -5,22 +5,22 @@ Tags:
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#f92672>import</span> <span style=color:#e6db74>&#34;syscall/js&#34;</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>myFunc</span>(<span style=color:#a6e22e>this</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>, <span style=color:#a6e22e>args</span> []<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>) <span style=color:#a6e22e>any</span> {
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>myFunc</span>(<span style=color:#a6e22e>this</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>, <span style=color:#a6e22e>args</span> []<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>) <span style=color:#66d9ef>any</span> {
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;hello&#34;</span>
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>main</span>() {
-</span></span><span style=display:flex><span>    <span style=color:#75715e>// create a global variable MyFunc in JavaScript 
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// and assign a function to it
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Global</span>().<span style=color:#a6e22e>Set</span>(<span style=color:#e6db74>&#34;MyFunc&#34;</span>, <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>FuncOf</span>(<span style=color:#a6e22e>myFunc</span>))
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// create a global variable MyFunc in JavaScript </span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// and assign a function to it</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Global</span>().<span style=color:#a6e22e>Set</span>(<span style=color:#e6db74>&#34;MyFunc&#34;</span>, <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>FuncOf</span>(<span style=color:#a6e22e>myFunc</span>))
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#75715e>// wait indefinitely so that Go does not terminate execution 
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// and the function remains available
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	<span style=color:#f92672>&lt;-</span>make(<span style=color:#66d9ef>chan</span> <span style=color:#66d9ef>struct</span>{}) 
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// wait indefinitely so that Go does not terminate execution </span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// and the function remains available</span>
+</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;-</span>make(<span style=color:#66d9ef>chan</span> <span style=color:#66d9ef>struct</span>{}) 
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p><a href=https://pkg.go.dev/syscall/js target=_blank rel=noreferrer><code>syscall/js</code></a> is a package from the Go standard library. The Go compiler and your IDE may complain that they don&rsquo;t know it. To avoid this, you should add a directive to the beginning of <code>main.go</code> that the file can be compiled only to WebAssembly:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#75715e>//go:build wasm
-</span></span></span><span style=display:flex><span><span style=color:#75715e>// +build wasm
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
+</span></span></code></pre></div><p><a href=https://pkg.go.dev/syscall/js target=_blank rel=noreferrer><code>syscall/js</code></a> is a package from the Go standard library. The Go compiler and your IDE may complain that they don&rsquo;t know it. To avoid this, you should add a directive to the beginning of <code>main.go</code> that the file can be compiled only to WebAssembly:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#75715e>//go:build wasm</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// +build wasm</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#f92672>import</span> (
 </span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;syscall/js&#34;</span>
@@ -83,38 +83,38 @@ Tags:
 </span></span><span style=display:flex><span>	<span style=color:#a6e22e>obj</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>mypkg</span>.<span style=color:#a6e22e>myObj</span>
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>// Constructor of a JavaScript object
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>NewObj</span>(<span style=color:#a6e22e>this</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>, <span style=color:#a6e22e>args</span> []<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>) <span style=color:#a6e22e>any</span> {
-</span></span><span style=display:flex><span>	<span style=color:#75715e>// Convert `js.Value` arguments to the types we need
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	<span style=color:#a6e22e>name</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>args</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>String</span>()
+</span></span><span style=display:flex><span><span style=color:#75715e>// Constructor of a JavaScript object</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>NewObj</span>(<span style=color:#a6e22e>this</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>, <span style=color:#a6e22e>args</span> []<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>) <span style=color:#66d9ef>any</span> {
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// Convert `js.Value` arguments to the types we need</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>name</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>args</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>String</span>()
 </span></span><span style=display:flex><span>	<span style=color:#a6e22e>number</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>args</span>[<span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>Int</span>()
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>	<span style=color:#75715e>// Create an object
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	<span style=color:#a6e22e>wrap</span> <span style=color:#f92672>:=</span> <span style=color:#f92672>&amp;</span><span style=color:#a6e22e>wrapper</span>{
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// Create an object</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>wrap</span> <span style=color:#f92672>:=</span> <span style=color:#f92672>&amp;</span><span style=color:#a6e22e>wrapper</span>{
 </span></span><span style=display:flex><span>		<span style=color:#a6e22e>obj</span>: <span style=color:#a6e22e>mypkg</span>.<span style=color:#a6e22e>NewObj</span>(<span style=color:#a6e22e>name</span>, <span style=color:#a6e22e>number</span>)
 </span></span><span style=display:flex><span>	}
 </span></span><span style=display:flex><span>	
-</span></span><span style=display:flex><span>	<span style=color:#75715e>// Convert our wrapper to
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	<span style=color:#75715e>// JavaScript object with two methods
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	<span style=color:#66d9ef>return</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>ValueOf</span>(<span style=color:#66d9ef>map</span>[<span style=color:#66d9ef>string</span>]<span style=color:#a6e22e>any</span>{
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// Convert our wrapper to</span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// JavaScript object with two methods</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>ValueOf</span>(<span style=color:#66d9ef>map</span>[<span style=color:#66d9ef>string</span>]<span style=color:#66d9ef>any</span>{
 </span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;set&#34;</span>: <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>FuncOf</span>(<span style=color:#a6e22e>wrap</span>.<span style=color:#a6e22e>Set</span>),
 </span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;get&#34;</span>: <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>FuncOf</span>(<span style=color:#a6e22e>wrap</span>.<span style=color:#a6e22e>Get</span>),
 </span></span><span style=display:flex><span>	})
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>// The object&#39;s method
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>w</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>wrapper</span>) <span style=color:#a6e22e>Set</span>(<span style=color:#a6e22e>this</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>, <span style=color:#a6e22e>args</span> []<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>) <span style=color:#a6e22e>any</span> {
+</span></span><span style=display:flex><span><span style=color:#75715e>// The object&#39;s method</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>w</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>wrapper</span>) <span style=color:#a6e22e>Set</span>(<span style=color:#a6e22e>this</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>, <span style=color:#a6e22e>args</span> []<span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>Value</span>) <span style=color:#66d9ef>any</span> {
 </span></span><span style=display:flex><span>	<span style=color:#a6e22e>name</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>args</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>String</span>()
 </span></span><span style=display:flex><span>	<span style=color:#a6e22e>number</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>args</span>[<span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>Int</span>()
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#a6e22e>res</span>, <span style=color:#a6e22e>err</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>w</span>.<span style=color:#a6e22e>obj</span>.<span style=color:#a6e22e>Set</span>(<span style=color:#a6e22e>name</span>, <span style=color:#a6e22e>number</span>)
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>ValueOf</span>(<span style=color:#66d9ef>map</span>[<span style=color:#66d9ef>string</span>]<span style=color:#a6e22e>any</span>{
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>ValueOf</span>(<span style=color:#66d9ef>map</span>[<span style=color:#66d9ef>string</span>]<span style=color:#66d9ef>any</span>{
 </span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;error&#34;</span>:  <span style=color:#a6e22e>err</span>.<span style=color:#a6e22e>Error</span>(),
 </span></span><span style=display:flex><span>        })
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>ValueOf</span>(<span style=color:#66d9ef>map</span>[<span style=color:#66d9ef>string</span>]<span style=color:#a6e22e>any</span>{
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#a6e22e>js</span>.<span style=color:#a6e22e>ValueOf</span>(<span style=color:#66d9ef>map</span>[<span style=color:#66d9ef>string</span>]<span style=color:#66d9ef>any</span>{
 </span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;result&#34;</span>: <span style=color:#a6e22e>res</span>,
 </span></span><span style=display:flex><span>	})
 </span></span><span style=display:flex><span>}
