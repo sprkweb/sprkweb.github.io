@@ -14,7 +14,7 @@ I'm currently working at [Kaspersky](https://www.kaspersky.com/).
 You might like to:
 
 - Read my [posts]({{< ref "/posts" >}})
-- Take a look at my [interactive fretboard for guitarists](https://sprkweb.dev/octava-page/)
+- Take a look at my [interactive fretboard for guitarists](https://sprkweb.github.io/octava-page/)
 - Check out my interactive articles: 
-    - [Pareto Principle](https://sprkweb.dev/pareto-page/)
+    - [Pareto Principle](https://sprkweb.github.io/pareto-page/)
     - [I Know A Lot About You](https://iknowalotaboutyou.netlify.app)

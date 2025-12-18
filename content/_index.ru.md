@@ -14,7 +14,7 @@ subtitle: "Golang Backend Разработчик"
 Возможно, вам понравится:
 
 - Почитать мои [записи о разработке]({{< ref "/posts" >}})
-- Взглянуть на [интерактивную аппликатуру для гитаристов](https://sprkweb.dev/octava-page/)
+- Взглянуть на [интерактивную аппликатуру для гитаристов](https://sprkweb.github.io/octava-page/)
 - Посмотреть на интерактивные статьи: 
-    - [Принцип Парето](https://sprkweb.dev/pareto-page/index.ru.html)
+    - [Принцип Парето](https://sprkweb.github.io/pareto-page/index.ru.html)
     - [Я Знаю О Тебе Многое](https://iknowalotaboutyou.netlify.app)
