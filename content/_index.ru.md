@@ -15,6 +15,7 @@ subtitle: "Golang Backend Разработчик"
 
 - Почитать мои [записи о разработке]({{< ref "/posts" >}})
 - Взглянуть на [интерактивную аппликатуру для гитаристов](https://sprkweb.github.io/octava-page/)
+- [Сделать мем с лошадьми](https://sprkweb.github.io/horsememe/), оценив свой любимый сериал
 - Посмотреть на интерактивные статьи: 
     - [Принцип Парето](https://sprkweb.github.io/pareto-page/index.ru.html)
     - [Я Знаю О Тебе Многое](https://iknowalotaboutyou.netlify.app)

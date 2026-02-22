@@ -15,6 +15,7 @@ You might like to:
 
 - Read my [posts]({{< ref "/posts" >}})
 - Take a look at my [interactive fretboard for guitarists](https://sprkweb.github.io/octava-page/)
+- [Create a meme with horses](https://sprkweb.github.io/horsememe/) by rating your favourite TV series
 - Check out my interactive articles: 
     - [Pareto Principle](https://sprkweb.github.io/pareto-page/)
     - [I Know A Lot About You](https://iknowalotaboutyou.netlify.app)
