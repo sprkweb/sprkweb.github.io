@@ -13,7 +13,7 @@
 и функциональная, но при этом с простым интерфейсом,
 который позволяет настраивать её несколькими строками кода.
 Кроме того, она поддерживает <a href=https://developers.google.com/speed/webp/ target=_blank rel=noreferrer>WebP</a> -
-формат изображений, который мне также очень нравится.</p><p>Для вставки изображений я сделал следующий шорткод:</p><p><a href=https://github.com/sprkweb/sprkweb.github.io/blob/30b0c2f9f491b776cddc35f6b2afd139cb7a2790/layouts/shortcodes/img.html target=_blank rel=noreferrer>layouts/shortcodes/img.html</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>{{ $original := $.Page.Resources.GetMatch (.Get 0) }}
+формат изображений, который мне также очень нравится.</p><p>Для вставки изображений я сделал следующий шорткод:</p><p><a href=https://github.com/sprkweb/sprkweb.github.io/blob/30b0c2f9f491b776cddc35f6b2afd139cb7a2790/layouts/shortcodes/img.html target=_blank rel=noreferrer>layouts/shortcodes/img.html</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-html data-lang=html><span style=display:flex><span>{{ $original := $.Page.Resources.GetMatch (.Get 0) }}
 </span></span><span style=display:flex><span>{{ $optimized := $original.Fit &#34;896x3072 webp&#34; }}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>&lt;<span style=color:#f92672>figure</span>&gt;
@@ -46,7 +46,7 @@
 в случаях, когда они масштабируются до нужной ширины.</p><p>Изменение настроек в файле
 <a href=https://github.com/sprkweb/sprkweb.github.io/blob/master/config.yaml target=_blank rel=noreferrer>config.yaml</a>
 позволило значительно улучшить внешний вид
-оптимизированных изображений:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>imaging</span>:
+оптимизированных изображений:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>imaging</span>:
 </span></span><span style=display:flex><span>  <span style=color:#f92672>quality</span>: <span style=color:#ae81ff>85</span> <span style=color:#75715e># процентов</span>
 </span></span><span style=display:flex><span>  <span style=color:#f92672>hint</span>: <span style=color:#ae81ff>picture</span>
 </span></span><span style=display:flex><span>  <span style=color:#f92672>resampleFilter</span>: <span style=color:#ae81ff>Lanczos</span>
