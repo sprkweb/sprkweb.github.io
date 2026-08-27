@@ -1,0 +1,17 @@
+{
+    "name": "Hugo Extended blog",
+    "install": "./.cursor/install.sh",
+    "terminals": [
+        {
+            "name": "hugo-server",
+            "command": "make serve",
+            "description": "Hugo live-preview dev server on http://localhost:1313/ (RU) and /en/ (EN)."
+        }
+    ],
+    "ports": [
+        {
+            "name": "hugo",
+            "port": 1313
+        }
+    ]
+}
