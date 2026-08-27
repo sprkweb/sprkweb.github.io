@@ -20,10 +20,6 @@ $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubu
         --subtle-color: hsl(0, 0%, 25%);
         --link-color: hsl(240, 100%, 75%);
     }
-
-    img {
-        filter: brightness(.8) contrast(1.2);
-    }
 }
 
 html, body {
