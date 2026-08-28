@@ -2,12 +2,12 @@
 title: "Development history: Octava Page"
 date: 2021-05-31
 lastmod: 2023-01-07
-tags: ["Development history", "Case"]
+description: "How I built a web app that helps novice musicians to understand the notes"
+tags: ["Development history"]
 ---
 
 Octava Page is a web application for novice musicians
 that helps to understand the notes.
-<!--more-->
 
 {{< table-of-contents >}}
 

@@ -8,22 +8,41 @@
 {{ end }}
 
 <article class="feed-item">
+    <div class="feed-meta">
+        {{ if .Params.date }}
+            {{ $format := "2006.01.02" }}
+            {{ .Date.Format $format }}
+        {{ end }}
+
+        {{ if $isApp }}
+            <span class="feed-kind">
+                {{- partial "icon.html" (dict "icon" "flash" "ariaHidden" true) -}}
+                {{- i18n "feed-kind-app" -}}
+            </span>
+        {{ else }}
+            <span class="feed-kind">
+                {{- partial "icon.html" (dict "icon" "reader" "ariaHidden" true) -}}
+                {{- i18n "feed-kind-post" -}}
+            </span>
+        {{ end }}
+    </div>
+
     <h2 class="feed-item-title">
         <a href="{{ $href }}"{{ if $isApp }} target="_blank" rel="noreferrer"{{ end }}>
-            <span class="feed-kind">{{- if $isApp -}}
-                {{- i18n "feed-kind-app" -}}
-                <span class="visually-hidden">{{ i18n "opens-in-new-tab" }}</span>
-                {{- partial "icon.html" (dict "icon" "external" "ariaHidden" true) -}}
-            {{- else -}}
-                {{- i18n "feed-kind-post" -}}
-            {{- end -}}</span>
-            <span class="feed-item-name">{{ .Title }}</span>
+            <span class="feed-item-name">
+                {{- .Title -}}
+            </span>
+            {{- if $isApp -}}
+                {{- partial "icon.html" (dict "icon" "open" "ariaHidden" true) -}}
+            {{- end -}}
         </a>
     </h2>
 
     <div class="feed-item-summary">
-        {{ .Summary }}
+        {{ if $isApp }}
+            {{ .Summary }}
+        {{ else }}
+            {{ with .Description }}<p>{{ . }}</p>{{ end }}
+        {{ end }}
     </div>
-
-    {{ partial "post-info.html" . }}
 </article>

@@ -1,12 +1,20 @@
-.nav {
+.header {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 0.75em 1.5em;
     padding: 1em 0;
     border-bottom: 1px solid var(--subtle-color);
 }
 
-.nav-right {
+.header-right {
     margin-left: auto;
+    flex-shrink: 0;
+}
+
+#contacts {
+    flex: 1;
+    min-width: 0;
 }
 
 .row-list {

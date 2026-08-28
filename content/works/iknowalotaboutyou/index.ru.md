@@ -4,4 +4,4 @@ date: 2022-01-25
 externalURL: https://iknowalotaboutyou.netlify.app
 ---
 
-Что любой сайт может узнать о вас.
+Что любой сайт может узнать о вас

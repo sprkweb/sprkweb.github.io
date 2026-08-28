@@ -1,3 +1,5 @@
+contacts:
+  other: Контакты
 this-site-on-github:
   other: Этот сайт на GitHub
 feed:
@@ -6,8 +8,6 @@ feed-kind-post:
   other: Запись
 feed-kind-app:
   other: Приложение
-opens-in-new-tab:
-  other: открывается в новой вкладке
 tags:
   other: Теги
 lastmod-date:

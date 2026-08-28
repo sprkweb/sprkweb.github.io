@@ -2,7 +2,6 @@ baseURL: "https://sprkweb.github.io/"
 defaultContentLanguage: ru
 staticDir:
   - static
-sectionPagesMenu: main
 taxonomies:
   tag: tags
 markup:
@@ -15,19 +14,9 @@ languages:
   ru:
     title: Вадим Сапрыкин
     description: "Вадим Сапрыкин - бэкенд Golang разработчик, заинтересованный в изучении почти всего, пишет свои мысли о разных технологиях, идеях и своих проектах."
-    menu:
-      main:
-        - name: Контакты
-          url: "#contacts"
-          weight: 200
   en:
     title: Vadim Saprykin
     description: "Vadim Saprykin is a backend Golang developer interested in almost anything."
-    menu:
-      main:
-        - name: Contacts
-          url: "#contacts"
-          weight: 200
 params:
   githubLink: "https://github.com/sprkweb/sprkweb.github.io"
   contacts:

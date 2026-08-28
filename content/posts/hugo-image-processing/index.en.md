@@ -2,7 +2,8 @@
 title: "Image processing in Hugo"
 date: 2021-06-22
 lastmod: 2023-01-03
-tags: [Hugo]
+description: "How I optimize images in Hugo: WebP, resizing and compression via a simple shortcode"
+tags: []
 ---
 
 The [image processing system](https://gohugo.io/content-management/image-processing/)
@@ -11,7 +12,6 @@ and functional, but it also has a simple interface that allows you to
 customize it with a few lines of code. It also supports 
 [WebP](https://developers.google.com/speed/webp/), 
 an image format that I also really like.
-<!--more-->
 
 I made the following shortcode for inserting images:
 

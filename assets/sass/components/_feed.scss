@@ -2,20 +2,10 @@
     margin-bottom: 2em;
 }
 
-.feed-item-title {
-    font-size: 1.1em;
-    font-weight: 600;
-    line-height: 1.4;
-    margin: 0 0 0.35em;
-
-    a {
-        text-decoration: none;
-
-        &:hover .feed-item-name,
-        &:focus .feed-item-name {
-            text-decoration: underline;
-        }
-    }
+.feed-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
 }
 
 .feed-kind {
@@ -25,10 +15,9 @@
     margin-right: 0.6em;
     padding: 0.1em 0.5em;
     vertical-align: middle;
-    font-size: 0.7em;
+    font-size: 0.8em;
     font-weight: 500;
     line-height: 1.3;
-    color: var(--text-color);
     white-space: nowrap;
     border: 1px solid var(--subtle-color);
     border-radius: 0.25em;
@@ -39,6 +28,25 @@
         svg {
             height: 1em;
             fill: currentColor;
+        }
+    }
+}
+
+.feed-item-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 0.35em;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75ch;
+        text-decoration: none;
+
+        &:hover .feed-item-name,
+        &:focus .feed-item-name {
+            text-decoration: underline;
         }
     }
 }
