@@ -22,7 +22,7 @@ help:
 		'make install     install Hugo Extended v$(HUGO_VERSION) + npm deps' \
 		'make serve       live preview → http://localhost:1313/' \
 		'make build       production build (hugo --minify), same as deploy CI' \
-		'make check       verify the production build succeeds' \
+		'make check       verify the production build succeeds, same as PR CI' \
 		'make lighthouse  Lighthouse CI on key pages of the production build (needs Chrome)' \
 		'make clean       remove public/, resources/_gen/, and .lighthouseci/'
 

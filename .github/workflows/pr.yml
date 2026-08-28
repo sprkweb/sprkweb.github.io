@@ -1,14 +1,32 @@
-name: CI
+name: PR
 
 on:
   pull_request:
   workflow_dispatch:
 
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: pr-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.165.0'
+          extended: true
+
+      - name: Check
+        run: make check
+
   lighthouse:
     name: Lighthouse
     runs-on: ubuntu-latest
@@ -24,8 +42,8 @@ jobs:
           hugo-version: '0.165.0'
           extended: true
 
-      - name: Build
-        run: make build
+      - name: Check
+        run: make check
 
       - name: Lighthouse
         uses: treosh/lighthouse-ci-action@v12
