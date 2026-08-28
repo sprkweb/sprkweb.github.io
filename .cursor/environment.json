@@ -1,6 +1,6 @@
 {
     "name": "Hugo Extended blog",
-    "install": "./.cursor/install.sh",
+    "install": "make install",
     "terminals": [
         {
             "name": "hugo-server",
