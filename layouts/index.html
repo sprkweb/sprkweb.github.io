@@ -13,5 +13,18 @@
             {{.Content}}
         </div>
     </article>
+
+    <section class="feed" aria-label="{{ i18n "feed" }}">
+        {{ $pages := slice }}
+        {{ range where site.RegularPages "Section" "posts" }}
+            {{ $pages = $pages | append . }}
+        {{ end }}
+        {{ with site.GetPage "/works" }}
+            {{ range .Pages }}
+                {{ $pages = $pages | append . }}
+            {{ end }}
+        {{ end }}
+        {{ partial "feed.html" $pages }}
+    </section>
 </main>
 {{ end }}

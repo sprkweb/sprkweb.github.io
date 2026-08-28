@@ -1,28 +1,4 @@
 <footer class="footer">
-    <ul id="contacts" class="row-list row-list-gapped">
-        {{ range .Site.Params.contacts }}
-            <li>{{ partial "icon-text-link.html" . }}</li>
-        {{ end }}
-    </ul>
-    <script>
-        const contactsEl = document.getElementById('contacts');
-        const highlightAnimation = [
-            { outline: '5px solid rgba(255, 255, 255, 0)' },
-            { outline: '5px solid var(--outline-color)', offset: 0.5 },
-            { outline: '5px solid rgba(255, 255, 255, 0)' }
-        ];
-
-        document.querySelectorAll('a[href="#contacts"]')
-            .forEach((el) => 
-                el.addEventListener('click', () => 
-                    contactsEl.animate(highlightAnimation, {
-                        duration: 1000,
-                        iterations: 2,
-                        easing: 'linear'
-                    })
-            ));
-    </script>
-    
     <p>
         {{ partial "icon-text-link.html" (dict
             "text" (i18n "this-site-on-github")

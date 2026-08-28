@@ -2,11 +2,11 @@
 title: "P2P Mafia in the browser: development with AI agents"
 date: 2026-08-26
 lastmod: 2026-08-26
-tags: ["Development history", "Case"]
+description: "How I made Police Raid - an online game without a backend - and what I learned from experiments with AI agents"
+tags: ["Development history"]
 ---
 
 Police Raid started with two goals: ship a web version of an online social deduction game, and try different AI agents in practice, outside my usual stack.
-<!--more-->
 
 [View →](https://sprkweb.github.io/police-raid/)
 

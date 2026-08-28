@@ -7,16 +7,4 @@ subtitle: "Golang Backend Разработчик"
 - Заинтересован почти во всём остальном в IT;
 - Будет рад, когда вы ему [напишете](#contacts).
 
-<br><br>
-
 Сейчас я работаю в [Лаборатории Касперского](https://www.kaspersky.com/).
-
-Возможно, вам понравится:
-
-- Почитать мои [записи о разработке]({{< ref "/posts" >}})
-- Поиграть в [полицейский рейд](https://sprkweb.github.io/police-raid/) с друзьями
-- Взглянуть на [интерактивную аппликатуру для гитаристов](https://sprkweb.github.io/octava-page/)
-- [Сделать мем с лошадьми](https://sprkweb.github.io/horsememe/), оценив свой любимый сериал
-- Посмотреть на интерактивные статьи: 
-    - [Принцип Парето](https://sprkweb.github.io/pareto-page/index.ru.html)
-    - [Я Знаю О Тебе Многое](https://iknowalotaboutyou.netlify.app)

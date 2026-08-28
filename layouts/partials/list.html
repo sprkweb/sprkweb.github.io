@@ -1,17 +1,1 @@
-{{ range (.Pages.ByParam "date").Reverse }}
-<div class="post">
-    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-
-    <div>
-        {{ .Summary }}
-    </div>
-
-    {{ partial "post-info.html" . }}
-    
-    {{ if .Truncated }}
-        <a href="{{ .Permalink }}">
-            {{ i18n "see-more" }}
-        </a>
-    {{ end }}
-</div>
-{{ end }}
+{{ partial "feed.html" .Pages }}

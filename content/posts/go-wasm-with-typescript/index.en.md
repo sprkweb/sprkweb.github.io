@@ -2,11 +2,11 @@
 title: "How to make Go, WebAssembly and TypeScript work together"
 date: 2023-11-29
 lastmod: 2023-11-29
-tags: [Golang, "Development history", "Case"]
+description: "My experience using Go via WebAssembly + TypeScript: functions, classes, types, and errors"
+tags: ["Development history"]
 ---
 
 Recently in one [of my pet projects](https://github.com/sprkweb/finaplan-web/tree/fab272594212a8c390a57f4ff5aede30489c9f05) I added Go code compiled in WebAssembly (*WASM*) for client-side execution. The interface is made with Svelte with TypeScript, and the logic is implemented in Golang. As a result, I got an interesting experience that I want to share: how to make Go, WebAssembly and TypeScript work together.
-<!--more-->
 
 {{< table-of-contents >}}
 

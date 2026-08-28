@@ -1,0 +1,10 @@
+<header class="header">
+    <ul id="contacts" class="row-list row-list-gapped" aria-label="{{ i18n "contacts" }}">
+        {{ range .Site.Params.contacts }}
+            <li>{{ partial "icon-text-link.html" . }}</li>
+        {{ end }}
+    </ul>
+    <div class="header-right">
+        {{ partial "i18n.html" . }}
+    </div>
+</header>

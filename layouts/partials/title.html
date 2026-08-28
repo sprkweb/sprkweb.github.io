@@ -1,5 +1,31 @@
 <h1>{{.Title}}</h1>
 
-{{ partial "post-info.html" . }}
+{{ if or .Params.date .Params.tags }}
+<p>
+    {{ if .Params.date }}
+        {{ $format := "2006.01.02" }}
+        {{ $publishDate := .Date.Format $format }}
+        {{ $updateDate := .Lastmod.Format $format }}
+        
+        {{ $publishDate }}
+        
+        {{- if ne $publishDate $updateDate -}}
+            , {{ i18n "lastmod-date" }}
+            {{ $updateDate }}
+        {{- end -}}    
+    {{- end -}}
 
-{{ with .Description }}<p>{{ . }}</p>{{ end }}
+    {{- if and .Params.date .Params.tags -}}
+    .
+    {{ end }}
+
+    {{ if .Params.tags }}
+        {{ i18n "tags" }}: 
+        {{ partial "tags.html" (.GetTerms "tags") }}
+    {{ end }}
+</p>
+{{ end }}
+
+{{ if not .IsPage }}
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+{{ end }}

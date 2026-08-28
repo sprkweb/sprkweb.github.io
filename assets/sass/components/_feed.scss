@@ -1,0 +1,60 @@
+.feed-item {
+    margin-bottom: 2em;
+}
+
+.feed-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.feed-kind {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    margin-right: 0.6em;
+    padding: 0.1em 0.5em;
+    vertical-align: middle;
+    font-size: 0.8em;
+    font-weight: 500;
+    line-height: 1.3;
+    white-space: nowrap;
+    border: 1px solid var(--subtle-color);
+    border-radius: 0.25em;
+
+    .icon {
+        height: 1em;
+
+        svg {
+            height: 1em;
+            fill: currentColor;
+        }
+    }
+}
+
+.feed-item-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 0.35em;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75ch;
+        text-decoration: none;
+
+        &:hover .feed-item-name,
+        &:focus .feed-item-name {
+            text-decoration: underline;
+        }
+    }
+}
+
+.feed-item-summary > *:first-child {
+    margin-top: 0;
+}
+
+.feed-item-summary > *:last-child {
+    margin-bottom: 0;
+}
