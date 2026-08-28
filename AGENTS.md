@@ -2,7 +2,9 @@
 
 Personal Hugo Extended blog. Default language is **Russian**, but **every page must have an English translation** (`*.ru.md` + `*.en.md`).
 
-Preview: `make serve` → http://localhost:1313/. Verify: `make check` (same as CI: `hugo --minify`). Uses local Hugo Extended if installed, otherwise Docker `klakegg/hugo:ext-alpine`.
+The blog is based on principles of simplicity, minimalism, and user-friendliness. UI is simple yet pleasing. Codebase is simple and straightforward. Therefore, it is statically generated in HTML and CSS, which is delivered to the user quickly and without any unnecessary imports.
+
+Preview: `make serve` → http://localhost:1313/. Verify: `make check` (same as CI: `hugo --minify`). Uses local Hugo Extended if installed (`make install`), otherwise Docker `klakegg/hugo:ext-alpine`.
 
 ## Posts
 
