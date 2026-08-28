@@ -1,8 +1,10 @@
+{{ $hidden := slice "posts" "works" }}
 <nav class="nav" role="navigation" aria-label="main navigation">
     <ul class="row-list row-list-gapped">
         {{ $currentPage := . }}
 
         {{ range .Site.Menus.main }}
+            {{ if not (in $hidden .Identifier) }}
             {{ $active := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
             <li>
                 {{ if $active }}
@@ -13,6 +15,7 @@
                     </a>
                 {{ end }}
             </li>
+            {{ end }}
         {{ end }}
     </ul>
 

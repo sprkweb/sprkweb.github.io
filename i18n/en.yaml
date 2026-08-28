@@ -1,7 +1,13 @@
 this-site-on-github:
   other: This site on GitHub
-see-more:
-  other: Read more →
+feed:
+  other: Feed
+feed-kind-post:
+  other: Post
+feed-kind-app:
+  other: App
+opens-in-new-tab:
+  other: opens in a new tab
 tags:
   other: Tags
 lastmod-date:
