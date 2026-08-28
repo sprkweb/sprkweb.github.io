@@ -4,7 +4,9 @@ Personal Hugo Extended blog. Default language is **Russian**, but **every page m
 
 The blog is based on principles of simplicity, minimalism, and user-friendliness. UI is simple yet pleasing. Codebase is simple and straightforward. Therefore, it is statically generated in HTML and CSS, which is delivered to the user quickly and without any unnecessary imports.
 
-Preview: `make serve` → http://localhost:1313/. Verify: `make check` (same as CI: `hugo --minify`). Uses local Hugo Extended if installed (`make install`), otherwise Docker `klakegg/hugo:ext-alpine`.
+Preview: `make serve` → http://localhost:1313/. Verify: `make check` (production build, same as deploy CI: `hugo --minify`) and `make lighthouse` (Lighthouse CI on key pages; needs Chrome or Chromium). Pull request CI runs the same `lighthouserc.json` budgets via `treosh/lighthouse-ci-action`. Uses local Hugo Extended if installed (`make install`), otherwise Docker `klakegg/hugo:ext-alpine`.
+
+After theme, layout, markup, or asset changes, run `make lighthouse` and keep category scores at the budgets in `lighthouserc.json` (currently ≥ 0.9). HTML reports land in `.lighthouseci/reports/` (gitignored).
 
 ## Posts
 

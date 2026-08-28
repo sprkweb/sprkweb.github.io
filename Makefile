@@ -12,15 +12,19 @@ run = $(HUGO)
 run-server = $(HUGO)
 endif
 
-.PHONY: help install serve build check clean
+LHCI_VERSION ?= 0.15.1
+LHCI_N ?= 1
+
+.PHONY: help install serve build check lighthouse clean
 
 help:
 	@printf '%s\n' \
-		'make install  install Hugo Extended v$(HUGO_VERSION) + npm deps' \
-		'make serve    live preview → http://localhost:1313/' \
-		'make build    production build (hugo --minify), same as CI' \
-		'make check    verify the production build succeeds' \
-		'make clean    remove public/ and resources/_gen/'
+		'make install     install Hugo Extended v$(HUGO_VERSION) + npm deps' \
+		'make serve       live preview → http://localhost:1313/' \
+		'make build       production build (hugo --minify), same as deploy CI' \
+		'make check       verify the production build succeeds' \
+		'make lighthouse  Lighthouse CI on key pages of the production build (needs Chrome)' \
+		'make clean       remove public/, resources/_gen/, and .lighthouseci/'
 
 # Idempotent: install pinned Hugo Extended (if missing) and npm deps.
 # Linux downloads the prebuilt binary; macOS uses Homebrew.
@@ -62,5 +66,19 @@ build:
 check: build
 	@echo "Build OK"
 
+# Production build + Lighthouse CI (lighthouserc.json). PR CI uses treosh/lighthouse-ci-action (LHCI bundled).
+lighthouse: build
+	@if [ -z "$$CHROME_PATH" ] \
+		&& ! command -v google-chrome >/dev/null 2>&1 \
+		&& ! command -v google-chrome-stable >/dev/null 2>&1 \
+		&& ! command -v chromium >/dev/null 2>&1 \
+		&& ! command -v chromium-browser >/dev/null 2>&1; then \
+		echo "make lighthouse needs Chrome or Chromium (or set CHROME_PATH)." >&2; \
+		exit 1; \
+	fi
+	npx --yes @lhci/cli@$(LHCI_VERSION) autorun \
+		--collect.numberOfRuns=$(LHCI_N) \
+		--assert.includePassedAssertions=true
+
 clean:
-	rm -rf public resources/_gen .hugo_build.lock
+	rm -rf public resources/_gen .hugo_build.lock .lighthouseci
